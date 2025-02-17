@@ -10,6 +10,8 @@ and instructions on how to obtain them are provided below.
 
 ## Install Python
 
+Users of the NOC Data Science Platform or Binder Hub can skip this section and move on to the "Obtain lesson materials" section below.
+
 ### Install Miniforge
 
 If Conda has not been installed on your machine, then install [Miniforge](https://conda-forge.org/download/) for your OS. As the name 
