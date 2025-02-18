@@ -118,7 +118,7 @@ conda 4.8.2
 
 Run the following command to install the required dependencies.
 ~~~
-$ conda install jupyterlab pip python=3.11 numpy matplotlib-base matplotlib-inline netcdf4
+$ conda install jupyterlab pip python=3.11 "numpy>2.0" matplotlib-base matplotlib-inline netcdf4
 ~~~
 {: .language-bash}
 
