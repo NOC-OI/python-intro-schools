@@ -1,5 +1,5 @@
 ---
-title: Python Fundamentals - test changeg
+title: Python Fundamentals
 teaching: 20
 exercises: 10
 questions:
