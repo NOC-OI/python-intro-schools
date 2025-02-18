@@ -499,7 +499,7 @@ print('Wave height standard deviation:', stdval)
 Here we've assigned the return value from `numpy.max(data[:,2])` to the variable `maxval`, the value
 from `numpy.min(data[:,2])` to `minval`, and so on. Note that we used `maxval`, rather than just `max` - it's
 not good practice to use variable names that are the same as [Python keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords)
-or fuction names.  
+or fuction names.
 
 ~~~
 Max wave height: 6.956
@@ -508,7 +508,7 @@ Wave height standard deviation: 1.1440155050316319
 ~~~
 {: .output}
 
-> ## Mystery Functions in IPython
+> ## Getting help on functions
 >
 > How did we know what functions NumPy has and how to use them?
 > If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out.
@@ -604,27 +604,6 @@ The standard deviation of the reshaped data is: 1.1440155050316319
 ~~~
 {: .output}
 
-> ## Printing text
->
-> Earlier on in the episide, we just printed text in one print statement, and output
-> in a different print statement. However, in the last example, we printed text and 
-> output in the same print statement. Python has several ways to achieve this, but the
-> way we just used is the most modern, and is formally called ["Formatted string literals"](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals), 
-> but more commonly called "f-strings". We need to prefix the string with the letter 'f', but then
-> anything within curly brackets is interpreted by python:
->
-> ~~~
-> name = 'Chris'
-> city = 'Edinburgh'
-> print(f"Hello, My name is {name} and I live in {city}.")
-> ~~~
-> {: .language-python}
->
-> F-strings can be used in most cases where we want to print output with text, but
-> there are some advanced edge-cases where the more verbose [string formatting](https://docs.python.org/3/tutorial/inputoutput.html#the-string-format-method)
-> still needs to be used
-{: .callout}
-
 We can now look variations in some summary statistics, such as the maximum wave height per month, or average height per year more easily. One way to do this is to create a new temporary array of the data we want, then ask it to do the calculation:
 
 ~~~
@@ -638,10 +617,6 @@ maximum wave height for year 0: 4.774
 ~~~
 {: .output}
 
-Everything in a line of code following the '#' symbol is a
-[comment]({{ page.root }}/reference.html#comment) that is ignored by Python.
-Comments allow programmers to leave explanatory notes for other
-programmers or their future selves.
 
 What if we need the maximum wave height for each month over all years (as in the
 next diagram on the left) or the average for each month (as in the

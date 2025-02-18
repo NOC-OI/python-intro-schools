@@ -14,6 +14,7 @@ keypoints:
 - "Use `variable = value` to assign a value to a variable in order to record it in memory."
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
+- "F-strings can be used to display variables without ending quotes using the syntax `print(f'some text {variable}')`"
 - "Built-in functions are always available to use."
 ---
 
@@ -176,15 +177,36 @@ To change the value of the `weight_kg` variable, we have to
 **assign** `weight_kg` a new value using the equals `=` sign:
 
 ~~~
-weight_kg = 65.0
+weight_kg = 75.0
 print('weight in kilograms is now:', weight_kg)
 ~~~
 {: .language-python}
 
 ~~~
-weight in kilograms is now: 65.0
+weight in kilograms is now: 75.0
 ~~~
 {: .output}
+
+
+## Printing variables with f-strings
+
+Earlier on in the episide, we just printed text in one print statement, and output
+in a different print statement. However, in the last example, we printed text and 
+output in the same print statement. Python has several ways to achieve this, but the
+way we just used is the most modern, and is formally called ["Formatted string literals"](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals), 
+but more commonly called "f-strings". We need to prefix the string with the letter 'f', but then
+anything within curly brackets is interpreted by python:
+
+~~~
+weight_kg = 65.0
+print(f'weight in kilograms is now: {weight_kg}')
+~~~
+{: .language-python}
+
+F-strings can be used in most cases where we want to print output with text, but
+there are some advanced edge-cases where the more verbose [string formatting](https://docs.python.org/3/tutorial/inputoutput.html#the-string-format-method)
+still needs to be used.
+
 
 > ## Variables as Sticky Notes
 >
@@ -236,6 +258,13 @@ stuck on it](../fig/python-sticky-note-variables-03.svg)
 > Since `weight_lb` doesn't "remember" where its value comes from,
 > it is not updated when we change `weight_kg`.
 {: .callout}
+
+## Comments in Python
+
+Everything in a line of code following the '#' symbol is a
+[comment]({{ page.root }}/reference.html#comment) that is ignored by Python.
+Comments allow programmers to leave explanatory notes for other
+programmers or their future selves.
 
 
 > ## Check Your Understanding
