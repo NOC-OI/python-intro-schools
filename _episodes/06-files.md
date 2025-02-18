@@ -50,7 +50,7 @@ If we want to start by analyzing just the first three files in alphabetical orde
 ~~~
 import glob
 import numpy
-import matplotlib.pyplot
+import matplotlib.pyplot as plt
 
 filenames = sorted(glob.glob('waves_*.csv'))
 filenames = filenames[0:3]
@@ -65,7 +65,7 @@ for filename in filenames:
     # need to reshape the data for plotting
     data = numpy.reshape(data[:,2], [number_of_years,12])
     
-    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+    fig = plt.figure(figsize=(10.0, 3.0))
         
     axes1 = fig.add_subplot(1, 3, 1)
     axes2 = fig.add_subplot(1, 3, 2)
@@ -81,7 +81,7 @@ for filename in filenames:
     axes3.plot(numpy.min(data, axis=0))
 
     fig.tight_layout()
-    matplotlib.pyplot.show()
+    plt.show()
 ~~~
 {: .language-python}
 
@@ -233,7 +233,7 @@ look at summary statistics and aggregate values from tabular data to come to the
 > > ~~~
 > > import glob
 > > import numpy
-> > import matplotlib.pyplot
+> > import matplotlib.pyplot as plt
 > >
 > > filenames = sorted(glob.glob('waves_*.csv'))
 > >
@@ -248,13 +248,13 @@ look at summary statistics and aggregate values from tabular data to come to the
 > > number_of_years1 = number_of_rows1//12 
 > > data1 = numpy.reshape(data1[:,2], [number_of_years1,12])
 > >
-> > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+> > fig = plt.figure(figsize=(10.0, 3.0))
 > >
-> > matplotlib.pyplot.ylabel('Difference in average')
-> > matplotlib.pyplot.plot(numpy.mean(data0, axis=0) - numpy.mean(data1, axis=0))
+> > plt.ylabel('Difference in average')
+> > plt.plot(numpy.mean(data0, axis=0) - numpy.mean(data1, axis=0))
 > >
 > > fig.tight_layout()
-> > matplotlib.pyplot.show()
+> > plt.show()
 > > ~~~
 > > {: .language-python}
 > {: .solution}
