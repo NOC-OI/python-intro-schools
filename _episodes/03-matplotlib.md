@@ -359,7 +359,7 @@ matplotlib.pyplot.show()
 ![Global surface waveheight](../fig/global_surfaceu.svg)
 
 NetCDF files can be quite complex, and normally consist of a number of variables stored as 2D or 3D arrays. `globaldata["hs_avg"]`
-is getting a variable called *hs_avg*, which is of type `netCDF4._netCDF4.Variable` (the full list of variables stored can be listed with
+is getting a variable called *hs_avg* (average significant wave height), which is of type `netCDF4._netCDF4.Variable` (the full list of variables stored can be listed with
 `globaldata.variables.keys()`). We can use the first element of `globaldata["hs_avg"]` to plot the global map using the `imshow()` function.
 Although the type of this element is `numpy.ma.core.MaskedArray`, the `imshow()` function can natively use this variable type as input.
 
