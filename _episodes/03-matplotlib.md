@@ -184,7 +184,8 @@ formats, including SVG, PDF, and JPEG.
 > approach you choose to take, but you must be consistent as if you use
 > `import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and
 > you must use `plt.plot(...)` instead. Because of this, when working with other people it
-> is important you agree on how libraries are imported.
+> is important you agree on how libraries are imported. From this point onwards this lesson uses
+> `plt` to mean `matplotlib.pyplot`.
 {: .callout}
 
 > ## Plot Scaling
@@ -238,18 +239,18 @@ formats, including SVG, PDF, and JPEG.
 > > ## Solution
 > > We can call `plot` multiple times before we call `show`, and each of those will be added to the axes. We can also
 > > specify format options as a string (this needs to specified straight after the data to plot), with all available options
-> > listed in [the documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html). We also need to specify the 
+> > listed in [the documentation](https://matplotlib.org/stable/api/_as_gen/plt.plot.html). We also need to specify the 
 > > `label` for each plot, and call `legend()` to make the legend visible. 
 > >
 > > An example would be
 > >
 > > ~~~
-> > matplotlib.pyplot.plot(numpy.max(data, axis=0), "bo", label='Maximum')
-> > matplotlib.pyplot.plot(numpy.average(data, axis=0), "m+", label='Average')
-> > matplotlib.pyplot.plot(numpy.min(data, axis=0), "r--", label='Minumum')
-> > matplotlib.pyplot.legend(loc='best')
+> > plt.plot(numpy.max(data, axis=0), "bo", label='Maximum')
+> > plt.plot(numpy.average(data, axis=0), "m+", label='Average')
+> > plt.plot(numpy.min(data, axis=0), "r--", label='Minumum')
+> > plt.legend(loc='best')
 > >
-> > matplotlib.pyplot.show()
+> > plt.show()
 > > ~~~
 > > {: .language-python}
 > ![Three plots showing the average, maximum
@@ -264,8 +265,8 @@ formats, including SVG, PDF, and JPEG.
 >
 > > ## Solution
 > > ~~~
-> > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
-> > matplotlib.pyplot.show()
+> > std_plot = plt.plot(numpy.std(data, axis=0))
+> > plt.show()
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -279,7 +280,7 @@ formats, including SVG, PDF, and JPEG.
 > > ## Solution
 > > ~~~
 > > # change figsize (swap width and height)
-> > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
+> > fig = plt.figure(figsize=(3.0, 10.0))
 > >
 > > # change add_subplot (swap first two parameters)
 > > axes1 = fig.add_subplot(3, 1, 1)
@@ -297,7 +298,7 @@ formats, including SVG, PDF, and JPEG.
 > >
 > > fig.tight_layout()
 > >
-> > matplotlib.pyplot.show()
+> > plt.show()
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -349,10 +350,10 @@ print(type(globaldata))
 We can use Matplotlib to display this data set as a world map. The data go from -90 degrees (south pole) to +90 degrees (north pole) in the y direction. In the x-direction the data go from 0 to 360 degrees East, starting at the Greenwich meridian. The white areas are land, because we have no data there to plot.
 
 ~~~
-matplotlib.pyplot.xlabel("Longitude")
-matplotlib.pyplot.ylabel("Latitude")
-matplotlib.pyplot.imshow(globaldata["hs_avg"][0], extent=[0,360,-90,90], origin='lower')
-matplotlib.pyplot.show()
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.imshow(globaldata["hs_avg"][0], extent=[0,360,-90,90], origin='lower')
+plt.show()
 ~~~
 {: .language-python}
 
@@ -370,13 +371,13 @@ which is the default for plotting matrix-type data (because this is where `[0:0]
 We can also add a colour bar to help describe the figure, with a little more code:
 
 ~~~
-fig = matplotlib.pyplot.figure(figsize=(12.0,4.0))
-ax = matplotlib.pyplot.gca()
+fig = plt.figure(figsize=(12.0,4.0))
+ax = plt.gca()
 ax.set_xlabel("Longitude")
 ax.set_ylabel("Latitude")
 im = ax.imshow(globaldata["hs_avg"][0], extent=[0,360,-90,90], origin='lower')
 cbar = fig.colorbar(im, ax=ax, location="right", pad=0.02)
-matplotlib.pyplot.show()
+plt.show()
 ~~~
 {: .language-python}
 

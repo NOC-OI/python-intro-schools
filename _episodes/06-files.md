@@ -190,8 +190,8 @@ If we plot the reshaped data, we would see white squares where there are NaNs in
 number_of_rows = data.shape[0]
 number_of_years = number_of_rows//12
 data = numpy.reshape(data[:,2], [number_of_years,12])
-matplotlib.pyplot.imshow(data)
-matplotlib.pyplot.show()
+plt.imshow(data)
+plt.show()
 ~~~
 {: .language-python}
 
