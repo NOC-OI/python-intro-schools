@@ -62,7 +62,7 @@ array([[1.979e+03, 1.000e+00, 3.788e+00],
        ...,
        [2.015e+03, 1.000e+01, 3.046e+00],
        [2.015e+03, 1.100e+01, 4.622e+00],
-       [2.015e+03, 1.200e+01, 5.048e+00]])
+       [2.015e+03, 1.200e+01, 5.048e+00]], shape=(444, 3))
 ~~~
 {: .output}
 
@@ -545,7 +545,7 @@ Wave height standard deviation: 1.1440155050316319
 > {: .language-python}
 >
 > ~~~
-> nan
+> np.float64(nan)
 > ~~~
 > {: .output}
 > 
@@ -558,7 +558,7 @@ Wave height standard deviation: 1.1440155050316319
 > {: .language-python}
 >
 > ~~~
-> 2.0
+> np.float64(2.0)
 > ~~~
 > {: .output}
 >
@@ -640,7 +640,8 @@ print(numpy.mean(reshaped_data, axis=0))
 {: .language-python}
 
 ~~~
-[6.956 6.074 6.184 5.838 4.882 4.754 4.648 4.688 5.064 5.032 5.15  6.044]
+[4.59956757 4.39708108 4.09156757 3.26016216 2.60437838 2.3072973
+ 2.18940541 2.32145946 2.9907027  3.55627027 3.90345946 4.38140541]
 ~~~
 {: .output}
 
@@ -687,7 +688,7 @@ lose the variables we've created, so let's save the reshaped data to a file:
 ~~~
 numpy.savetxt("reshaped_data.csv", reshaped_data, delimiter=',')
 ~~~
-{: .python}
+{: .language-python}
 
 
 
