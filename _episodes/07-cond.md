@@ -334,6 +334,17 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print("one is true")
 > ~~~
 > {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > word is true
+> > non-empty list is true
+> > one is true
+> > ~~~
+> > {: .output}
+> > 
+> > A non-empty string, non-empty list and non-zero variable all evaluate to True. An empty string, empty list and zero all evaluate to False.
+> {: .solution}
 {: .challenge}
 
 > ## That's Not Not What I Meant
@@ -353,6 +364,15 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print("not not True is true")
 > ~~~
 > {: .language-python}
+> 
+> > ## Solution
+> > ~~~
+> > empty string is not true
+> > not not True is true
+> > ~~~
+> > {: .output}
+> > The not of an empty string evaluates to True. Evaluating not twice converts back to original value, so doing not twice on True is True.
+> {: .solution}
 {: .challenge}
 
 > ## Close Enough
@@ -527,6 +547,13 @@ freeing us from having to manually examine every plot for features we've seen be
 > > print("other_files:", other_files)
 > > ~~~
 > > {: .language-python}
+> >
+> > ~~~
+> > csv_files: ['wavesmonthly.csv', 'waves_00s.csv', 'waves_10s.csv', 'waves_80s.csv', 'waves_90s.csv']
+> > nc_files: ['multyear_hs_avg.nc']
+> > other_files: []
+> > ~~~
+> > {: .output}
 > {: .solution}
 {: .challenge}
 
