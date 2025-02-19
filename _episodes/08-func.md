@@ -316,7 +316,7 @@ That looks right,
 so let's try `offset_mean` on our real data:
 
 ~~~
-data = np.loadtxt(fname='reshaped_data.csv', delimiter=',')
+reshaped_data = np.loadtxt(fname='reshaped_data.csv', delimiter=',')
 print(offset_mean(reshaped_data, 0))
 ~~~
 {: .language-python}
