@@ -207,13 +207,14 @@ we can make our wave data easier to read and easier to reuse.
 First, let's make a `visualize` function that generates our plots:
 
 ~~~
+import numpy as np
 def visualize(filename):
-    data = numpy.loadtxt(fname=filename, delimiter=',')
+    data = np.loadtxt(fname=filename, delimiter=',')
     number_of_rows = data.shape[0] # total number of months
     number_of_years = number_of_rows // 12 # total number of years = number of months / number of months per year
 
     # need to reshape the data for plotting
-    reshaped_data = numpy.reshape(data[:,2], [number_of_years,12])
+    reshaped_data = np.reshape(data[:,2], [number_of_years,12])
 
     fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -222,13 +223,13 @@ def visualize(filename):
     axes3 = fig.add_subplot(1, 3, 3)
 
     axes1.set_ylabel('average')
-    axes1.plot(numpy.mean(reshaped_data, axis=0))
+    axes1.plot(np.mean(reshaped_data, axis=0))
 
     axes2.set_ylabel('max')
-    axes2.plot(numpy.max(reshaped_data, axis=0))
+    axes2.plot(np.max(reshaped_data, axis=0))
 
     axes3.set_ylabel('min')
-    axes3.plot(numpy.min(reshaped_data, axis=0))
+    axes3.plot(np.min(reshaped_data, axis=0))
 
     fig.tight_layout()
     matplotlib.pyplot.show()
@@ -240,14 +241,14 @@ we noticed:
 
 ~~~
 def detect_problems(filename):
-    data = numpy.loadtxt(fname=filename, delimiter=',')
+    data = np.loadtxt(fname=filename, delimiter=',')
     number_of_rows = data.shape[0] # total number of months
     number_of_years = number_of_rows // 12 # number of years = total number of months / number of months per year
-    reshaped_data = numpy.reshape(data[:,2], [number_of_years,12])
+    reshaped_data = np.reshape(data[:,2], [number_of_years,12])
     
-    if numpy.max(reshaped_data, axis=0)[0] == 0 and numpy.max(reshaped_data, axis=0)[11] == 11:
+    if np.max(reshaped_data, axis=0)[0] == 0 and np.max(reshaped_data, axis=0)[11] == 11:
         print('Suspicious looking maxima!')
-    elif numpy.sum(numpy.min(reshaped_data, axis=0)) == 0:
+    elif np.sum(np.min(reshaped_data, axis=0)) == 0:
         print('Minima add up to zero!')
     else:
         print('Seems OK!')
@@ -288,7 +289,7 @@ shifts to a user-defined value:
 
 ~~~
 def offset_mean(data, target_mean_value):
-    return (data - numpy.mean(data)) + target_mean_value
+    return (data - np.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -300,7 +301,7 @@ let's use NumPy to create a matrix of 0's
 and then offset its values to have a mean value of 3:
 
 ~~~
-z = numpy.zeros((2,2))
+z = np.zeros((2,2))
 print(offset_mean(z, 3))
 ~~~
 {: .language-python}
@@ -315,7 +316,7 @@ That looks right,
 so let's try `offset_mean` on our real data:
 
 ~~~
-data = numpy.loadtxt(fname='reshaped_data.csv', delimiter=',')
+data = np.loadtxt(fname='reshaped_data.csv', delimiter=',')
 print(offset_mean(reshaped_data, 0))
 ~~~
 {: .language-python}
@@ -335,12 +336,12 @@ It's hard to tell from the default output whether the result is correct,
 but there are a few tests that we can run to reassure us:
 
 ~~~
-print('original min, mean, and max are:', numpy.min(reshaped_data), numpy.mean(reshaped_data), numpy.max(reshaped_data))
+print('original min, mean, and max are:', np.min(reshaped_data), np.mean(reshaped_data), np.max(reshaped_data))
 offset_data = offset_mean(reshaped_data, 0)
 print('min, mean, and max of offset data are:',
-      numpy.min(offset_data),
-      numpy.mean(offset_data),
-      numpy.max(offset_data))
+      np.min(offset_data),
+      np.mean(offset_data),
+      np.max(offset_data))
 ~~~
 {: .language-python}
 
@@ -358,7 +359,7 @@ it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
 ~~~
-print('std dev before and after:', numpy.std(reshaped_data), numpy.std(offset_data))
+print('std dev before and after:', np.std(reshaped_data), np.std(offset_data))
 ~~~
 {: .language-python}
 
@@ -373,7 +374,7 @@ Let's do this instead:
 
 ~~~
 print('difference in standard deviations before and after:',
-      numpy.std(data) - numpy.std(offset_data))
+      np.std(data) - np.std(offset_data))
 ~~~
 {: .language-python}
 
@@ -397,7 +398,7 @@ to add [comments]({{ page.root }}/reference.html#comment) like this:
 # offset_mean(data, target_mean_value):
 # return a new array containing the original data with its mean offset to match the desired value.
 def offset_mean(data, target_mean_value):
-    return (data - numpy.mean(data)) + target_mean_value
+    return (data - np.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -409,7 +410,7 @@ that string is attached to the function as its documentation:
 def offset_mean(data, target_mean_value):
     """Return a new array containing the original data
        with its mean offset to match the desired value."""
-    return (data - numpy.mean(data)) + target_mean_value
+    return (data - np.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -444,7 +445,7 @@ def offset_mean(data, target_mean_value):
     >>> offset_mean([1, 2, 3], 0)
     array([-1.,  0.,  1.])
     """
-    return (data - numpy.mean(data)) + target_mean_value
+    return (data - np.mean(data)) + target_mean_value
 
 help(offset_mean)
 ~~~
@@ -468,12 +469,12 @@ offset_mean(data, target_mean_value)
 
 We have passed parameters to functions in two ways:
 directly, as in `type(data)`,
-and by name, as in `numpy.loadtxt(fname='something.csv', delimiter=',')`.
+and by name, as in `np.loadtxt(fname='something.csv', delimiter=',')`.
 In fact,
 we can pass the filename to `loadtxt` without the `fname=`:
 
 ~~~
-numpy.loadtxt('reshaped_data.csv', delimiter=' ')
+np.loadtxt('reshaped_data.csv', delimiter=' ')
 ~~~
 {: .language-python}
 
@@ -497,7 +498,7 @@ array([[3.788, 3.768, 4.774, 2.818, 2.734, 2.086, 2.066, 2.236, 3.322,
 but we still need to say `delimiter=`:
 
 ~~~
-numpy.loadtxt('reshaped_data.csv', ' ')
+np.loadtxt('reshaped_data.csv', ' ')
 ~~~
 {: .language-python}
 
@@ -507,7 +508,7 @@ Traceback (most recent call last):
   File "/Users/username/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py", line 1041, in loa
 dtxt
     dtype = np.dtype(dtype)
-  File "/Users/username/anaconda3/lib/python3.6/site-packages/numpy/core/_internal.py", line 199, in
+  File "/Users/username/anaconda3/lib/python3.6/site-packages/np/core/_internal.py", line 199, in
 _commastring
     newitem = (dtype, eval(repeats))
   File "<string>", line 1
@@ -531,7 +532,7 @@ def offset_mean(data, target_mean_value=0.0):
     >>> offset_mean([1, 2, 3])
     array([-1.,  0.,  1.])
     """
-    return (data - numpy.mean(data)) + target_mean_value
+    return (data - np.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -541,7 +542,7 @@ If we call the function with two arguments,
 it works as it did before:
 
 ~~~
-test_data = numpy.zeros((2, 2))
+test_data = np.zeros((2, 2))
 print(offset_mean(test_data, 3))
 ~~~
 {: .language-python}
@@ -557,7 +558,7 @@ in which case `target_mean_value` is automatically assigned
 the [default value]({{ page.root }}/reference.html#default-value) of 0.0:
 
 ~~~
-more_data = 5 + numpy.zeros((2, 2))
+more_data = 5 + np.zeros((2, 2))
 print('data before mean offset:')
 print(more_data)
 print('offset data:')
@@ -623,10 +624,10 @@ a: 1 b: 2 c: 77
 {: .output}
 
 With that in hand,
-let's look at the help for `numpy.loadtxt`:
+let's look at the help for `np.loadtxt`:
 
 ~~~
-help(numpy.loadtxt)
+help(np.loadtxt)
 ~~~
 {: .language-python}
 
@@ -659,7 +660,7 @@ and eight others that do.
 If we call the function like this:
 
 ~~~
-numpy.loadtxt('reshaped_data.csv', ',')
+np.loadtxt('reshaped_data.csv', ',')
 ~~~
 {: .language-python}
 
@@ -685,7 +686,7 @@ def s(p):
     d = 0
     for v in p:
         d += (v - m) * (v - m)
-    return numpy.sqrt(d / (len(p) - 1))
+    return np.sqrt(d / (len(p) - 1))
 
 def std_dev(sample):
     sample_sum = 0
@@ -698,7 +699,7 @@ def std_dev(sample):
     for value in sample:
         sum_squared_devs += (value - sample_mean) * (value - sample_mean)
 
-    return numpy.sqrt(sum_squared_devs / (len(sample) - 1))
+    return np.sqrt(sum_squared_devs / (len(sample) - 1))
 ~~~
 {: .language-python}
 
@@ -817,8 +818,8 @@ readable code!
 > > ## Solution
 > > ~~~
 > > def rescale(input_array):
-> >     L = numpy.min(input_array)
-> >     H = numpy.max(input_array)
+> >     L = np.min(input_array)
+> >     H = np.max(input_array)
 > >     output_array = (input_array - L) / (H - L)
 > >     return output_array
 > > ~~~
@@ -828,7 +829,7 @@ readable code!
 
 > ## Testing and Documenting Your Function
 >
-> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
+> Run the commands `help(np.arange)` and `help(np.linspace)`
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
 > Once you've successfully tested your function,
@@ -840,10 +841,10 @@ readable code!
 > > that 0 corresponds to the minimum and 1 to the maximum value of the input array.
 > >
 > > Examples:
-> > >>> rescale(numpy.arange(10.0))
+> > >>> rescale(np.arange(10.0))
 > > array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
 > >        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
-> > >>> rescale(numpy.linspace(0, 100, 5))
+> > >>> rescale(np.linspace(0, 100, 5))
 > > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
 > > """
 > > ~~~
@@ -862,8 +863,8 @@ readable code!
 > > ~~~
 > > def rescale(input_array, low_val=0.0, high_val=1.0):
 > >     """rescales input array values to lie between low_val and high_val"""
-> >     L = numpy.min(input_array)
-> >     H = numpy.max(input_array)
+> >     L = np.min(input_array)
+> >     H = np.max(input_array)
 > >     intermed_array = (input_array - L) / (H - L)
 > >     output_array = intermed_array * (high_val - low_val) + low_val
 > >     return output_array
