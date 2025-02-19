@@ -190,12 +190,12 @@ weight in kilograms is now: 75.0
 
 ## Printing variables with f-strings
 
-Earlier on in the episide, we just printed text in one print statement, and output
+Earlier on we just printed text in one print statement, and output
 in a different print statement. However, in the last example, we printed text and 
-output in the same print statement. Python has several ways to achieve this, but the
-way we just used is the most modern, and is formally called ["Formatted string literals"](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals), 
+output in the same print statement. Python has several ways to achieve this, we can use a comma seperated list of 
+things to print. Another approach is known as ["Formatted string literals"](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals), 
 but more commonly called "f-strings". We need to prefix the string with the letter 'f', but then
-anything within curly brackets is interpreted by python:
+anything within curly brackets is interpreted by python. Variable names can be referenced by wrapping them in '{' and '} symbols. 
 
 ~~~
 weight_kg = 65.0
@@ -203,10 +203,8 @@ print(f'weight in kilograms is now: {weight_kg}')
 ~~~
 {: .language-python}
 
-F-strings can be used in most cases where we want to print output with text, but
-there are some advanced edge-cases where the more verbose [string formatting](https://docs.python.org/3/tutorial/inputoutput.html#the-string-format-method)
-still needs to be used.
-
+F-strings can be used in most cases where we want to print output with text, there are many more advanced options for them that can control things such as the number of
+decimal places printed out on floating point values.
 
 > ## Variables as Sticky Notes
 >
