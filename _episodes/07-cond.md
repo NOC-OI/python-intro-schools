@@ -197,14 +197,14 @@ else:
 ~~~
 {: .language-python}
 
-Let's test that out for January:
+Let's test that out for February:
 
 ~~~
-month0 = numpy.mean(reshaped_data, axis=0)[0]
+month1 = numpy.mean(reshaped_data, axis=0)[1]
 
-if month0 < 3:
+if month1 < 3:
     print("Can take passengers this month")
-elif month0 < 4:
+elif month1 < 4:
     print("Can take survey vehicles (but not passengers)")
 else:
     print("Can't take any boats out to sea")
