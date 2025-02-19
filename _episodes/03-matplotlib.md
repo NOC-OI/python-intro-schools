@@ -246,6 +246,7 @@ formats, including SVG, PDF, and JPEG.
 > > An example would be
 > >
 > > ~~~
+> > import matplotlib.pyplot as plt
 > > plt.plot(numpy.max(data, axis=0), "bo", label='Maximum')
 > > plt.plot(numpy.average(data, axis=0), "m+", label='Average')
 > > plt.plot(numpy.min(data, axis=0), "r--", label='Minumum')
@@ -255,7 +256,7 @@ formats, including SVG, PDF, and JPEG.
 > > ~~~
 > > {: .language-python}
 > ![Three plots showing the average, maximum
- and minimum waveheights plotted on a single pair of axes.](../fig/monthly_wavedata-overlay.svg)
+ and minimum waveheights plotted on a single pair of axes.](../fig/monthly_wavedata-overlay.png)
 > {: .solution}
 {: .challenge}
 
