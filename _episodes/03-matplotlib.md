@@ -168,10 +168,10 @@ formats, including SVG, PDF, and JPEG.
 
 > ## Importing libraries with shortcuts
 >
-> In this lesson we use the `import matplotlib.pyplot`
+> So far we use have used the code `import matplotlib.pyplot`
 > [syntax]({{ page.root }}/reference.html#syntax)
-> to import the `pyplot` module of `matplotlib`. However, shortcuts such as
-> `import matplotlib.pyplot as plt` are frequently used.
+> to import the `pyplot` module of `matplotlib`. An alternative method for importing is to use
+> `import matplotlib.pyplot as plt`.
 > Importing `pyplot` this way means that after the initial import, rather than writing
 > `matplotlib.pyplot.plot(...)`, you can now write `plt.plot(...)`.
 > Another common convention is to use the shortcut `import numpy as np` when importing the
