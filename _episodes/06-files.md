@@ -164,30 +164,40 @@ There are differences year on year, and the minimum and maximum data tend to be 
 
 Sometimes, plots can help us spot patterns in data, or problems with data.
 
-Let's load `waves_90s.csv`:
+Let's load `waves_90s.csv` and reshape it so that the 3rd column (the average signifncant wave height for each month) is converted into 12 columns for each year.
 
 ~~~
 data = numpy.loadtxt(fname = "waves_90s.csv", delimiter=',')
-data = numpy.reshape(data[:,2], [10,12])
+reshaped_data = numpy.reshape(data[:,2], [10,12])
+print(data.shape)
+print(reshaped_data.shape)
 ~~~
 {: .language-python}
+
+~~~
+(120, 3)
+(10, 12)
+~~~
+{: .output}
 
 If we try and take the mean for the entire year, we'll see that there must be NaNs:
 
 ~~~
-numpy.mean(data)
+numpy.mean(reshaped_data)
 ~~~
 {: .language-python}
 
 ~~~
-nan
+np.float64(nan)
 ~~~
 {: .output}
 
-If we plot the reshaped data, we would see white squares where there are NaNs in the data:
+If we plot the reshaped data, we would see white squares where there are NaNs in the data. 
+Let's do the shaping operation again but this time in a more generic way where we don't need to know how many years are represented in the dataset.
 
 ~~~
-number_of_rows = data.shape[0]
+number_of_rows = reshaped_data.shape[0]
+# assume that every 12 rows represents one year of data and there's no missing data
 number_of_years = number_of_rows//12
 data = numpy.reshape(data[:,2], [number_of_years,12])
 plt.imshow(data)
