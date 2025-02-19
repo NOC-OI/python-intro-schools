@@ -495,26 +495,41 @@ array([[3.788, 3.768, 4.774, 2.818, 2.734, 2.086, 2.066, 2.236, 3.322,
 ~~~
 {: .output}
 
-but we still need to say `delimiter=`:
+but we still need to say `delimiter=','`:
 
 ~~~
-np.loadtxt('reshaped_data.csv', ' ')
+np.loadtxt('reshaped_data.csv', ',')
 ~~~
 {: .language-python}
 
 ~~~
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/Users/username/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py", line 1041, in loa
-dtxt
+
+  File ~/mambaforge/envs/python-workshop/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3579 in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+
+  Cell In[26], line 1
+    np.loadtxt('reshaped_data.csv', ',')
+
+  File /Users/username/anaconda3/lib/python3.6/site-packages/numpy/lib/_npyio_impl.py:1395 in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+
+  File /Users/username/anaconda3/lib/python3.6/site-packages/numpy/lib/_npyio_impl.py:947 in _read
     dtype = np.dtype(dtype)
-  File "/Users/username/anaconda3/lib/python3.6/site-packages/np/core/_internal.py", line 199, in
-_commastring
-    newitem = (dtype, eval(repeats))
-  File "<string>", line 1
+
+  File /Users/username/anaconda3/lib/python3.6/site-packages/numpy/_core/_internal.py:204 in _commastring
+    newitem = (dtype, ast.literal_eval(repeats))
+
+  File /Users/username/anaconda3/lib/python3.6/ast.py:64 in literal_eval
+    node_or_string = parse(node_or_string.lstrip(" \t"), mode='eval')
+
+  File /Users/username/anaconda3/lib/python3.6/ast.py:50 in parse
+    return compile(source, filename, mode, flags,
+
+  File <unknown>:1
     ,
     ^
-SyntaxError: unexpected EOF while parsing
+SyntaxError: invalid syntax
 ~~~
 {: .error}
 
