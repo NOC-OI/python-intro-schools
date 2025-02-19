@@ -45,8 +45,9 @@ import the `pyplot` module from `matplotlib` and use two of its functions to cre
 >
 > ~~~
 > import numpy
-> data = numpy.loadtxt(fname='reshaped_data.csv')
+> data = numpy.loadtxt(fname='reshaped_data.csv', delimiter=',')
 > ~~~
+> {: .language-python}
 {: .prereq}
 
 
