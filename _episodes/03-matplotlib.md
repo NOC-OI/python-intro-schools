@@ -240,7 +240,7 @@ formats, including SVG, PDF, and JPEG.
 > > ## Solution
 > > We can call `plot` multiple times before we call `show`, and each of those will be added to the axes. We can also
 > > specify format options as a string (this needs to specified straight after the data to plot), with all available options
-> > listed in [the documentation](https://matplotlib.org/stable/api/_as_gen/plt.plot.html). We also need to specify the 
+> > listed in [the documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html). We also need to specify the 
 > > `label` for each plot, and call `legend()` to make the legend visible. 
 > >
 > > An example would be
