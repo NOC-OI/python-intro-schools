@@ -4,26 +4,18 @@ title: Repeating Actions with Loops
 
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
+## About this lesson
 
-## Questions:
+#### Questions:
 - "How can I do the same operations on many different values?"
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Objectives:
+#### Objectives:
 - "Explain what a `for` loop does."
 - "Correctly write `for` loops to repeat simple calculations."
 - "Trace changes to a loop variable as the loop runs."
 - "Trace changes to other variables as they are updated by a `for` loop."
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Keypoints:
-
+#### Keypoints:
 - "Use `for variable in sequence` to process the elements of a sequence one at a time."
 - "The body of a `for` loop must be indented."
 - "Use `len(thing)` to determine the length of something that contains other values."

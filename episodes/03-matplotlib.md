@@ -5,22 +5,19 @@ exercises: 20
 ---
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
-## Questions:
+## About this lesson
+
+#### Questions:
 - "How can I visualize tabular data in Python?"
 - "How can I group several plots together?"
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Objectives:
+#### Objectives:
 - "Plot simple graphs from data."
 - "Plot multiple graphs in a single figure."
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Keypoints:
+#### Keypoints:
 - "Use the `pyplot` module from the `matplotlib` library for creating simple visualizations."
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

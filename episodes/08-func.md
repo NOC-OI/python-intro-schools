@@ -1,59 +1,25 @@
 ---
 title: Creating Functions
 teaching: 30
-questions:
-- "How can I define new functions?"
-- "What's the difference between defining and calling a function?"
-- "What happens when I call a function?"
-objectives:
-- "Define a function that takes parameters."
-- "Return a value from a function."
-- "Test and debug a function."
-- "Set default values for function parameters."
-- "Explain why we should divide programs into small, single-purpose functions."
-keypoints:
-- "Define a function using `def function_name(parameter)`."
-- "The body of a function must be indented."
-- "Call a function using `function_name(value)`."
-- "Numbers are stored as integers or floating-point numbers."
-- "Variables defined within a function can only be seen and used within the body of the function."
-- "Variables created outside of any function are called global variables."
-- "Within a function, we can access global variables."
-- "Variables created within a function override global variables if their names match."
-- "Use `help(thing)` to view help for something."
-- "Put docstrings in functions to provide help for that function."
-- "Specify default values for parameters when defining a function using `name=value`
-   in the parameter list."
-- "Parameters can be passed by matching based on name, by position,
-   or by omitting them (in which case the default value is used)."
-- "Put code whose parameters change frequently in a function,
-   then call it with different parameter values to customize its behavior."
 ---
 
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
+## About this lesson
 
-## Questions:
+#### Questions:
 - "How can I define new functions?"
 - "What's the difference between defining and calling a function?"
 - "What happens when I call a function?"
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Objectives:
+#### Objectives:
 - "Define a function that takes parameters."
 - "Return a value from a function."
 - "Test and debug a function."
 - "Set default values for function parameters."
 - "Explain why we should divide programs into small, single-purpose functions."
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Keypoints:
-
+#### Keypoints:
 - "Define a function using `def function_name(parameter)`."
 - "The body of a function must be indented."
 - "Call a function using `function_name(value)`."

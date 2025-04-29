@@ -160,7 +160,7 @@ if they do,
 we have to pay attention to the details once again,
 which quickly overloads our short-term memory.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+:::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Following the Call Stack
 

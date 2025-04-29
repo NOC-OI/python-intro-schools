@@ -3,26 +3,18 @@ title: Python Fundamentals
 ---
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
+## About this lesson
 
-## Questions:
+#### Questions:
 - "What basic data types can I work with in Python?"
 - "How can I create a new variable in Python?"
 - "How do I use a function?"
 - "Can I change the value associated with a variable after I create it?"
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Objectives:
+#### Objectives:
 - "Assign values to variables."
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Keypoints:
-
+#### Keypoints:
 - "Basic data types in Python include integers, strings, and floating-point numbers."
 - "Use `variable = value` to assign a value to a variable in order to record it in memory."
 - "Variables are created on demand whenever a value is assigned to them."

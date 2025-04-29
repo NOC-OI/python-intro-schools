@@ -3,15 +3,12 @@ title: Storing Multiple Values in Lists
 ---
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
+## About this lesson
 
-## Questions:
+#### Questions:
 - "How can I store many values together?"
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Objectives:
+#### Objectives:
 - "Explain what a list is."
 - "Create and index lists of simple values."
 - "Change the values of individual elements"
@@ -19,12 +16,7 @@ title: Storing Multiple Values in Lists
 - "Reorder and slice list elements"
 - "Create and manipulate nested lists"
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Keypoints:
-
+#### Keypoints:
 - "`[value1, value2, value3, ...]` creates a list."
 - "Lists can contain any Python object, including lists (i.e., list of lists)."
 - "Lists are indexed and sliced with square brackets (e.g., list[0] and

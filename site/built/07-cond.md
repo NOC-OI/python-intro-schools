@@ -3,24 +3,16 @@ title: Making Choices
 ---
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
+## About this lesson
 
-## Questions:
+#### Questions:
 - "How can my programs do different things based on data values?"
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Objectives:
+#### Objectives:
 - "Write conditional statements including `if`, `elif`, and `else` branches."
 - "Correctly evaluate expressions containing `and` and `or`."
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-## Keypoints:
-
+#### Keypoints:
 - "Use `if condition` to start a conditional statement, `elif condition` to
    provide additional tests, and `else` to provide a default."
 - "The bodies of the branches of conditional statements must be indented."
