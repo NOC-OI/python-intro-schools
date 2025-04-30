@@ -60,7 +60,7 @@ If the test is false,
 the body of the `else` is executed instead, and "not greater" is printed.
 Only one or the other is ever executed before continuing on with program execution to print "done":
 
-![A flowchart diagram of the if-else construct that tests if variable num is greater than 100](fig/python-flowchart-conditional.png)
+![](fig/python-flowchart-conditional.png){alt="A flowchart diagram of the if-else construct that tests if variable num is greater than 100"}
 
 Conditional statements don't have to include an `else`.
 If there isn't one,

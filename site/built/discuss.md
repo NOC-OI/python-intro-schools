@@ -31,7 +31,7 @@ final = fahr_to_celsius(original)
 
 The diagram below shows what memory looks like after the first line has been executed:
 
-![Call Stack (Initial State)](fig/python-call-stack-01.svg)
+![](fig/python-call-stack-01.svg){alt="Call Stack (Initial State)"}
 
 When we call `fahr_to_celsius`,
 Python *doesn't* create the variable `temp` right away.
@@ -41,12 +41,13 @@ to keep track of the variables defined by `fahr_to_kelvin`.
 Initially,
 this stack frame only holds the value of `temp`:
 
-![Call Stack Immediately After First Function Call](fig/python-call-stack-02.svg)
+![](fig/python-call-stack-02.svg){alt="Call Stack (After First Function Call)"}
 
 When we call `fahr_to_kelvin` inside `fahr_to_celsius`,
 Python creates another stack frame to hold `fahr_to_kelvin`'s variables:
 
-![Call Stack During First Nested Function Call](fig/python-call-stack-03.svg)
+![](fig/python-call-stack-03.svg){alt="Call Stack During First Nested Function Call"}
+
 
 It does this because there are now two variables in play called `temp`:
 the parameter to `fahr_to_celsius`,
@@ -61,18 +62,19 @@ Python throws away `fahr_to_kelvin`'s stack frame
 and creates a new variable in the stack frame for `fahr_to_celsius`
 to hold the temperature in Kelvin:
 
-![Call Stack After Return From First Nested Function Call](fig/python-call-stack-04.svg)
+![](fig/python-call-stack-04.svg){alt="Call Stack After Return From First Nested Function Call"}
+
 
 It then calls `kelvin_to_celsius`,
 which means it creates a stack frame to hold that function's variables:
 
-![Call Stack During Call to Second Nested Function](fig/python-call-stack-05.svg)
+![](fig/python-call-stack-05.svg){alt="Call Stack During Call to Second Nested Function"}
 
 Once again,
 Python throws away that stack frame when `kelvin_to_celsius` is done
 and creates the variable `result` in the stack frame for `fahr_to_celsius`:
 
-![Call Stack After Second Nested Function Returns](fig/python-call-stack-06.svg)
+![](fig/python-call-stack-06.svg){alt="Call Stack After Second Nested Function Returns"}
 
 Finally,
 when `fahr_to_celsius` is done,
@@ -80,7 +82,7 @@ Python throws away *its* stack frame
 and puts its result in a new variable called `final`
 that lives in the stack frame we started with:
 
-![Call Stack After All Functions Have Finished](fig/python-call-stack-07.svg)
+![](fig/python-call-stack-07.svg){alt="Call Stack After All Functions Have Finished"}
 
 This final stack frame is always there;
 it holds the variables we defined outside the functions in our code.
@@ -199,7 +201,7 @@ grid.show()
 ```
 
 
-![Grid of black squares with white outlines, 5 across by 3 down, demonstrating ImageGrid](fig/grid-01.png)
+![](fig/grid-01.png){alt="Grid of black squares with white outlines, 5 across by 3 down, demonstrating ImageGrid"}
 
 Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
@@ -227,7 +229,7 @@ RGB is an [additive color model](learners/reference.md#additive-color-model):
 every shade is some combination of red, green, and blue intensities.
 We can think of these three values as being the axes in a cube:
 
-![RGB Color Cube](fig/color-cube.png)
+![](fig/color-cube.png){alt="RGB Color Cube"}
 
 An RGB color is an example of a multi-part value:
 like a Cartesian coordinate,
@@ -308,8 +310,7 @@ row[7, 0] = (0, 255, 255) # green and blue
 row.show()
 ```
 
-
-![Row of 8 squares colored black, white, red, lime green, blue, yellow, fuchsia, and cyan](fig/grid-02.png)
+![](fig/grid-02.png){alt="Row of 8 squares colored black, white, red, lime green, blue, yellow, fuchsia, and cyan"}
 
 Simple color values like `(0,255,0)` are easy enough to decipher with a bit of practice,
 but what color is `(214,90,127)`?
@@ -322,7 +323,7 @@ show_color(214, 90, 127)
 ```
 
 
-![](fig/ipythonblocks_show_color_example.png)
+![](fig/ipythonblocks_show_color_example.png){alt="Color swatch of RGB color 214,90,127"}
 
 It also provides a table of standard colors:
 
@@ -339,7 +340,7 @@ c.show()
 ```
 
 
-![ 3 by 2 grid of colored squares. Row1: salmon, lavender, hot-pink. Row2: fuchsia, orchid, lime-green](fig/grid-03.png)
+![](fig/grid-03.png){alt="3 by 2 grid of colored squares. Row1: salmon, lavender, hot-pink. Row2: fuchsia, orchid, lime-green"}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 

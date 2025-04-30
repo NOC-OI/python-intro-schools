@@ -68,7 +68,7 @@ matplotlib.pyplot.show()
 ```
 
 
-![Heat map representing the wave height from the first 50 days. Each cell is colored by value along a color gradient from blue to yellow.](fig/monthly_wavedata-imshow.png)
+![](fig/monthly_wavedata-imshow.png){alt="Heat map representing the wave height from the first 50 days. Each cell is colored by value along a color gradient from blue to yellow."}
 
 Each row in the heat map corresponds to a year in the dataset, and each column corresponds to a month.  Blue pixels in this heat map represent low values, while
 yellow pixels represent high values. We can see low blue values in the middle (summer) months, and higher waves at the start and end of the year. This demonstrates that there is a seasonal cycle present. With calm summers bringing lower waves, and windy winters generating big waves. There are still differences year to year, with some stormier summers and calmer winters.
@@ -82,7 +82,7 @@ matplotlib.pyplot.show()
 ```
 
 
-![A line graph showing the monthly average wave height over a 37 year period.](fig/monthly_wavedata-average.png)
+![](fig/monthly_wavedata-average.png){alt="A line graph showing the monthly average wave height over a 37 year period."}
 
 This is a good way to smooth out variability, and see what is called a 'climatology', representing the long-term wave climate over several years or decades.
 
@@ -100,7 +100,7 @@ matplotlib.pyplot.show()
 ```
 
 
-![A line graph showing the maximum wave height per month over a 37 year period.](fig/monthly_wavedata-max.png)
+![](fig/monthly_wavedata-max.png){alt="A line graph showing the maximum wave height per month over a 37 year period."}
 
 ```python
 matplotlib.pyplot.ylabel("Min Wave Height (metres)")
@@ -110,7 +110,7 @@ matplotlib.pyplot.show()
 ```
 
 
-![A line graph showing the minimum wave height per month over a 37 year period.](fig/monthly_wavedata-min.png)
+![](fig/monthly_wavedata-min.png){alt="A line graph showing the minimum wave height per month over a 37 year period."}
 
 The minimum and maximum graphs show the large spread of all possible wave heights throughout the dataset. There is still a seasonal cycle, but less clear as the extremes are much less smooth. The maximum wave heights can reach a massive 7 metres, and even in the summer the maximum is 4.5m (around the height of a double decker bus!) The minimum values are more similar throughout the year, varying between 1.5 and 2.5 metres.
 
@@ -156,7 +156,7 @@ matplotlib.pyplot.show()
 ```
 
 
-![Three line graphs showing the daily average, maximum and minimum wave-heights over a 446-day period.](fig/wavedata-group-plot.svg)
+![](fig/wavedata-group-plot.svg){alt="Three line graphs showing the daily average, maximum and minimum wave-heights over a 446-day period."}
 
 This script tells the plotting library
 how large we want the figure to be,
@@ -269,8 +269,9 @@ plt.legend(loc='best')
 plt.show()
 ```
 
-![Three plots showing the average, maximum
- and minimum waveheights plotted on a single pair of axes.](fig/monthly_wavedata-overlay.png)
+![](fig/monthly_wavedata-overlay.png){alt="Three plots showing the average, maximum
+ and minimum waveheights plotted on a single pair of axes."}
+
 :::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -379,7 +380,7 @@ plt.show()
 ```
 
 
-![Global surface waveheight](fig/global_surfaceu.svg)
+![](fig/global_surfaceu.svg){alt="Global surface waveheight"}
 
 NetCDF files can be quite complex, and normally consist of a number of variables stored as 2D or 3D arrays. `globaldata["hs_avg"]`
 is getting a variable called *hs_avg* (average significant wave height), which is of type `netCDF4._netCDF4.Variable` (the full list of variables stored can be listed with
@@ -404,4 +405,4 @@ plt.show()
 
 
 
-![Global surface waveheight with a colourbar](fig/global_surfaceu-colourbar.svg)
+![](fig/global_surfaceu-colourbar.svg){alt="Global surface waveheight with a colourbar"}

@@ -151,8 +151,8 @@ for variable in collection:
 
 Using the odds example above, the loop might look like this:
 
-![Loop variable 'num' being assigned the value of each element in the list `odds` in turn and
-then being printed](fig/05-loops_image_num.png)
+![](fig/05-loops_image_num.png){alt="Loop variable 'num' being assigned the value of each element in the list `odds` in turn and
+then being printed"}
 
 where each number (`num`) in the variable `odds` is looped through and printed one number after
 another. The other numbers in the diagram denote which loop cycle the number was printed in (1

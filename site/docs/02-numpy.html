@@ -337,7 +337,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Analyzing some wave-height data</h1>
-        <p>Last updated on 2025-04-29 |
+        <p>Last updated on 2025-04-30 |
 
         <a href="https://github.com/noc-oi/python-novice-esces/edit/main/episodes/02-numpy.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -588,19 +588,13 @@ Perl, and Python) count from 0 because it represents an offset from the
 first value in the array (the second value is offset by one index from
 the first value). This is closer to the way that computers represent
 arrays (if you are interested in the historical reasons behind counting
-indices from zero, you can read <a href="http://exple.tive.org/blarg/2013/10/22/citation-needed/" class="external-link">Mike
+indices from zero, you can read <a href="https://exple.tive.org/blarg/2013/10/22/citation-needed/" class="external-link">Mike
 Hoye’s blog post</a>). As a result, if we have an M×N array in Python,
 its indices go from 0 to M-1 on the first axis and 0 to N-1 on the
 second. It takes a bit of getting used to, but one way to remember the
 rule is that the index is how many steps we have to take from the start
 to get the item we want.</p>
-<figure><img src="fig/python-zero-index.svg" alt="“data” is a 3 by 3 numpy array containing row 0: [‘A’, ‘B’, ‘C’], row 1: [‘D’, ‘E’, ‘F’], and row 2: [‘G’, ‘H’, ‘I’]. Starting in the upper left hand corner, data[0, 0] = ‘A’, data[0, 1] = ‘B’, data[0, 2] = ‘C’, data[1, 0] = ‘D’, data[1, 1] = ‘E’, data[1, 2] = ‘F’, data[2, 0] = ‘G’, data[2, 1] = ‘H’, and data[2, 2] = ‘I’, in the bottom right hand corner." class="figure mx-auto d-block"><div class="figcaption">“data” is a 3 by 3 numpy array containing row 0:
-[‘A’, ‘B’, ‘C’], row 1: [‘D’, ‘E’, ‘F’], and row 2: [‘G’, ‘H’, ‘I’].
-Starting in the upper left hand corner, data[0, 0] = ‘A’, data[0, 1] =
-‘B’, data[0, 2] = ‘C’, data[1, 0] = ‘D’, data[1, 1] = ‘E’, data[1, 2] =
-‘F’, data[2, 0] = ‘G’, data[2, 1] = ‘H’, and data[2, 2] = ‘I’, in the
-bottom right hand corner.</div>
-</figure><div id="in-the-corner" class="callout prereq">
+<figure><img src="fig/python-zero-index.svg" alt="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], and row 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B', data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G', data[2, 1] = 'H', and data[2, 2] = 'I', in the bottom right hand corner." class="figure mx-auto d-block"></figure><div id="in-the-corner" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
@@ -732,7 +726,7 @@ last three characters: gen</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -763,7 +757,7 @@ last three characters: gen</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -793,7 +787,7 @@ does.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Creates a substring from index 1 up to (not including) the final
 index, effectively removing the first and last letters from ‘oxygen’</p>
@@ -822,7 +816,7 @@ strings: <code>carpentry</code>, <code>clone</code>,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -867,7 +861,7 @@ data, what does <code>data[3:3, 4:4]</code> produce? What about
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1098,11 +1092,7 @@ want, then ask it to do the calculation:</p>
 (as in the next diagram on the left) or the average for each month (as
 in the diagram on the right)? As the diagram below shows, we want to
 perform the operation across an axis:</p>
-<figure><img src="fig/python-operations-across-axes.png" alt="Per-year maximum height is computed row-wise across all columns using numpy.max(data, axis=1). Per-year average wave height is computed column-wise across all rows using numpy.mean(data, axis=0)." class="figure mx-auto d-block"><div class="figcaption">Per-year maximum height is computed row-wise
-across all columns using numpy.max(data, axis=1). Per-year average wave
-height is computed column-wise across all rows using numpy.mean(data,
-axis=0).</div>
-</figure><p>To support this functionality, most array functions allow us to
+<figure><img src="fig/python-operations-across-axes.png" alt="Per-year maximum height is computed row-wise across all columns using numpy.max(data, axis=1). Per-year average wave height is computed column-wise across all rows using numpy.mean(data, axis=0)." class="figure mx-auto d-block"></figure><p>To support this functionality, most array functions allow us to
 specify the axis we want to work on. If we ask for the average across
 axis 0 (rows in our 2D example), we get:</p>
 <div class="codewrapper sourceCode" id="cb49">
@@ -1211,7 +1201,7 @@ C =
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>A ‘gotcha’ with array indexing is that singleton dimensions are
 dropped by default. That means <code>A[:, 0]</code> is a one dimensional
@@ -1243,7 +1233,7 @@ dimension (i.e. a column vector).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>An alternative way to achieve the same result is to use Numpy’s
 delete function to remove the second column of A.</p>
@@ -1326,7 +1316,7 @@ the <code>diff()</code> function and why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>The shape will be <code>(60, 39)</code> because there is one fewer
 difference between columns than there are columns in the data. {:
@@ -1343,7 +1333,7 @@ increase or a decrease?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <p>By using the <code>numpy.max()</code> function after you apply the
 <code>numpy.diff()</code> function, you will get the largest difference
@@ -1435,18 +1425,18 @@ difference between readings.</p>
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://datacarpentry.github.io/sql-ecology-lesson/02-numpy.html",
+  "@id": "https://noc-oi.github.io/python-novice-esces/02-numpy.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Analyzing some wave-height data",
   "creativeWorkStatus": "active",
-  "url": "https://datacarpentry.github.io/sql-ecology-lesson/02-numpy.html",
-  "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/02-numpy.html",
+  "url": "https://noc-oi.github.io/python-novice-esces/02-numpy.html",
+  "identifier": "https://noc-oi.github.io/python-novice-esces/02-numpy.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2025-04-29",
-  "datePublished": "2025-04-29"
+  "dateModified": "2025-04-30",
+  "datePublished": "2025-04-30"
 }
 
   </script><script>

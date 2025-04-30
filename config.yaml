@@ -83,6 +83,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-url: 'https://datacarpentry.github.io/sql-ecology-lesson'
+url: 'https://noc-oi.github.io/python-novice-esces'
 analytics: carpentries
 lang: en

@@ -224,7 +224,7 @@ because it represents an offset from the first value in the array (the second
 value is offset by one index from the first value). This is closer to the way
 that computers represent arrays (if you are interested in the historical
 reasons behind counting indices from zero, you can read
-[Mike Hoye's blog post](http://exple.tive.org/blarg/2013/10/22/citation-needed/)).
+[Mike Hoye's blog post](https://exple.tive.org/blarg/2013/10/22/citation-needed/)).
 As a result,
 if we have an M×N array in Python,
 its indices go from 0 to M-1 on the first axis
@@ -233,11 +233,11 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-!["data" is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], and
+![](fig/python-zero-index.svg){alt="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], and
 row 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',
 data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',
 data[2, 1] = 'H', and data[2, 2] = 'I',
-in the bottom right hand corner.](fig/python-zero-index.svg)
+in the bottom right hand corner."}
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
@@ -629,9 +629,9 @@ next diagram on the left) or the average for each month (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Per-year maximum height is computed row-wise across all columns using
+![](fig/python-operations-across-axes.png){alt="Per-year maximum height is computed row-wise across all columns using
 numpy.max(data, axis=1). Per-year average wave height is computed column-wise across all rows using
-numpy.mean(data, axis=0).](fig/python-operations-across-axes.png)
+numpy.mean(data, axis=0)."}
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.

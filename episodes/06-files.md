@@ -98,25 +98,24 @@ waves_00.csv
 ```
 
 
-![Output from the first iteration of the for loop. Three line graphs showing the average,
-maximum and minimum waveheight in the 2000s.](
-fig/waves_loop_1.svg)
+![](fig/waves_loop_1.svg){alt="Output from the first iteration of the for loop. Three line graphs showing the average,
+maximum and minimum waveheight in the 2000s."}
 
 ```output
 waves_10s.csv
 ```
 
 
-![Output from the second iteration of the for loop. Three line graphs showing the average,
-maximum and minimum waveheight in the 2010s.](fig/waves_loop_2.svg)
+![](fig/waves_loop_2.svg){alt="Output from the second iteration of the for loop. Three line graphs showing the average,
+maximum and minimum waveheight in the 2010s."}
 
 ```output
 waves_80s.csv
 ```
 
 
-![Output from the third iteration of the for loop. Three line graphs showing the average,
-maximum and minimum waveheight in the 1980s.](fig/waves_loop_3.svg)
+![](fig/waves_loop_3.svg){alt="Output from the third iteration of the for loop. Three line graphs showing the average,
+maximum and minimum waveheight in the 1980s."}
 
 
 Looking at these three decades, we can see similarities - with the average value representing a smooth climate with clear annual cycle.
@@ -215,7 +214,7 @@ plt.show()
 ```
 
 
-![1990s data highlighting NaNs](fig/1990s_nans.svg)
+![](fig/1990s_nans.svg){alt="1990s data highlighting NaNs"}
 
 We can clearly see that there must have been some problem with the collection of data in the first 6 months of 1994.
 Apart from that, the rest of the data looks relatively sensible, with low wave heights in the summer months of the decade, and

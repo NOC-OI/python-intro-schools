@@ -220,7 +220,7 @@ decimal places printed out on floating point values.
 A variable in Python is analogous to a sticky note with a name written on it:
 assigning a value to a variable is like putting that sticky note on a particular value.
 
-![Value of 65.0 with weight_kg label stuck on it](fig/python-sticky-note-variables-01.svg)
+![](fig/python-sticky-note-variables-01.svg){alt="Value of 65.0 with weight_kg label stuck on it"}
 
 Using this analogy, we can investigate how assigning a value to one variable
 does **not** change values of other, seemingly related, variables.  For
@@ -238,8 +238,7 @@ weight in kilograms: 65.0 and in pounds: 143.0
 ```
 
 
-![Value of 65.0 with weight_kg label stuck on it, and value of 143.0 with weight_lb label
-stuck on it](fig/python-sticky-note-variables-02.svg)
+![](fig/python-sticky-note-variables-02.svg){alt="Value of 65.0 with label weight_kg stuck on it, and value of 143.0 with label weight_lb stuck on it"}
 
 Similar to above, the expression `2.2 * weight_kg` is evaluated to `143.0`,
 and then this value is assigned to the variable `weight_lb` (i.e. the sticky
@@ -259,8 +258,8 @@ weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
 ```
 
 
-![Value of 100.0 with label weight_kg stuck on it, and value of 143.0 with label weight_lb
-stuck on it](fig/python-sticky-note-variables-03.svg)
+![](fig/python-sticky-note-variables-03.svg){alt="Value of 100.0 with label weight_kg stuck on it, and value of 143.0 with label weight_lb
+stuck on it"}
 
 Since `weight_lb` doesn't "remember" where its value comes from,
 it is not updated when we change `weight_kg`.
