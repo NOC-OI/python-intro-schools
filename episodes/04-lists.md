@@ -185,7 +185,7 @@ x = [['pepper', 'zucchini', 'onion'],
 
 Here is a visual example of how indexing a list of lists `x` works:
 
-[![hadleywickham-tweet](fig/indexing_lists_python.png){alt="x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
+![hadleywickham-tweet](fig/indexing_lists_python.png){alt="x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
 as a pepper shaker containing a single packet of pepper. x[0] is represented as a single packet of
 pepper. x[0][0] is represented as single grain of pepper.  Adapted
 from @hadleywickham."}
