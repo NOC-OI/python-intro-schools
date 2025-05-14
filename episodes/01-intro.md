@@ -1,26 +1,21 @@
 ---
 title: Python Fundamentals
+teaching: 20
+exercises: 10
 ---
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
+::::::::::::::::::::::::::::::::::::::::::  objectives
 
-#### Questions:
+- "Assign values to variables."
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::  questions
+
 - "What basic data types can I work with in Python?"
 - "How can I create a new variable in Python?"
 - "How do I use a function?"
 - "Can I change the value associated with a variable after I create it?"
-
-#### Objectives:
-- "Assign values to variables."
-
-#### Keypoints:
-- "Basic data types in Python include integers, strings, and floating-point numbers."
-- "Use `variable = value` to assign a value to a variable in order to record it in memory."
-- "Variables are created on demand whenever a value is assigned to them."
-- "Use `print(something)` to display the value of `something`."
-- "F-strings can be used to display variables without ending quotes using the syntax `print(f'some text {variable}')`"
-- "Built-in functions are always available to use."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -213,7 +208,7 @@ print(f'weight in kilograms is now: {weight_kg}')
 F-strings can be used in most cases where we want to print output with text, there are many more advanced options for them that can control things such as the number of
 decimal places printed out on floating point values.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Variables as Sticky Notes
 
@@ -355,5 +350,17 @@ print(type(distance))
 ```
 
 :::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::::::::  keypoints
+
+- "Basic data types in Python include integers, strings, and floating-point numbers."
+- "Use `variable = value` to assign a value to a variable in order to record it in memory."
+- "Variables are created on demand whenever a value is assigned to them."
+- "Use `print(something)` to display the value of `something`."
+- "F-strings can be used to display variables without ending quotes using the syntax `print(f'some text {variable}')`"
+- "Built-in functions are always available to use."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

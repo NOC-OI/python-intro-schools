@@ -1,28 +1,23 @@
 ---
 title: Storing Multiple Values in Lists
+teaching: 30
+exercises: 15
 ---
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
+::::::::::::::::::::::::::::::::::::::::::::::::: questions
 
-#### Questions:
 - "How can I store many values together?"
 
-#### Objectives:
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::  objectives
+
 - "Explain what a list is."
 - "Create and index lists of simple values."
 - "Change the values of individual elements"
 - "Append values to an existing list"
 - "Reorder and slice list elements"
 - "Create and manipulate nested lists"
-
-#### Keypoints:
-- "`[value1, value2, value3, ...]` creates a list."
-- "Lists can contain any Python object, including lists (i.e., list of lists)."
-- "Lists are indexed and sliced with square brackets (e.g., list[0] and
-list[2:9]), in the same way as strings and arrays."
-- "Lists are mutable (i.e., their values can be changed in place)."
-- "Strings are immutable (i.e., the characters in them cannot be changed)."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -115,7 +110,7 @@ TypeError: 'str' object does not support item assignment
 
 does not.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Ch-Ch-Ch-Ch-Changes
 
@@ -169,7 +164,7 @@ than to create a modified copy for every small change. You should consider both 
 when writing your code.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Nested Lists
 Since a list can contain any Python variables, it can even contain other lists.
@@ -185,7 +180,7 @@ x = [['pepper', 'zucchini', 'onion'],
 
 Here is a visual example of how indexing a list of lists `x` works:
 
-[![hadleywickham-tweet](fig/indexing_lists_python.png){alt="x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
+![hadleywickham-tweet](fig/indexing_lists_python.png){alt="x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
 as a pepper shaker containing a single packet of pepper. x[0] is represented as a single packet of
 pepper. x[0][0] is represented as single grain of pepper.  Adapted
 from @hadleywickham."}
@@ -549,3 +544,15 @@ counts + counts
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [hadleywickham-tweet]: https://twitter.com/hadleywickham/status/643381054758363136
+
+
+:::::::::::::::::::::::::::::::::  keypoints
+
+- "`[value1, value2, value3, ...]` creates a list."
+- "Lists can contain any Python object, including lists (i.e., list of lists)."
+- "Lists are indexed and sliced with square brackets (e.g., list[0] and
+list[2:9]), in the same way as strings and arrays."
+- "Lists are mutable (i.e., their values can be changed in place)."
+- "Strings are immutable (i.e., the characters in them cannot be changed)."
+
+::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -1,27 +1,23 @@
 ---
 title: Repeating Actions with Loops
+teaching: 30
+exercises: 10
 ---
 
+:::::::::::::::::::::::::::::::::::::::::: questions
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
-
-#### Questions:
 - "How can I do the same operations on many different values?"
 
-#### Objectives:
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::: objectives
+
 - "Explain what a `for` loop does."
 - "Correctly write `for` loops to repeat simple calculations."
 - "Trace changes to a loop variable as the loop runs."
 - "Trace changes to other variables as they are updated by a `for` loop."
 
-#### Keypoints:
-- "Use `for variable in sequence` to process the elements of a sequence one at a time."
-- "The body of a `for` loop must be indented."
-- "Use `len(thing)` to determine the length of something that contains other values."
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
 In the episode about visualizing data,
 we wrote Python code that plots values of interest from the wave-height dataset.
@@ -90,7 +86,7 @@ print(odds[3])
 ```
 
 
-```output
+```error
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-3-7974b6cdaf14in <module>()
@@ -163,7 +159,7 @@ there must be a colon at the end of the line starting the loop, and we must inde
 want to run inside the loop. Unlike many other languages, there is no command to signify the end
 of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## What's in a name?
 
@@ -431,4 +427,12 @@ for idx, coef in enumerate(coefs):
 ```
 
 :::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::  keypoints
+
+- "Use `for variable in sequence` to process the elements of a sequence one at a time."
+- "The body of a `for` loop must be indented."
+- "Use `len(thing)` to determine the length of something that contains other values."
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::

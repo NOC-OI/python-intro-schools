@@ -1,27 +1,19 @@
 ---
 title: Making Choices
+teaching: 30
+exercises: 10
 ---
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
+:::::::::::::::::::::::::::::::::::::::::: questions
 
-#### Questions:
 - "How can my programs do different things based on data values?"
 
-#### Objectives:
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::: objectives
+
 - "Write conditional statements including `if`, `elif`, and `else` branches."
 - "Correctly evaluate expressions containing `and` and `or`."
-
-#### Keypoints:
-- "Use `if condition` to start a conditional statement, `elif condition` to
-   provide additional tests, and `else` to provide a default."
-- "The bodies of the branches of conditional statements must be indented."
-- "Use `==` to test for equality."
-- "`X and Y` is only true if both `X` and `Y` are true."
-- "`X or Y` is true if either `X` or `Y`, or both, are true."
-- "Zero, the empty string, and the empty list are considered false;
-   all other numbers, strings, and lists are considered true."
-- "`True` and `False` represent truth values."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -105,7 +97,7 @@ else:
 Note that to test for equality we use a double equals sign `==`
 rather than a single equals sign `=` which is used to assign values.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Comparing in Python
 
@@ -397,8 +389,10 @@ and `False` otherwise.
 Compare your implementation with your partner's:
 do you get the same answer for all possible pairs of numbers?
 
+:::::::::::::::  solution
 
-#### Hint
+## Hint
+
 There is a [built-in function `abs`][abs-function] that returns the absolute value of
 a number:
 ```python
@@ -409,7 +403,12 @@ print(abs(-12))
 12
 ```
 
+:::::::::::::::::::::::::
+
 :::::::::::::::  solution
+
+## Solution 1
+
 ```python
 a = 5
 b = 5.1
@@ -423,6 +422,9 @@ else:
 :::::::::::::::::::::::::
 
 :::::::::::::::  solution
+
+## Solution 2
+
 ```python
 print(abs(a - b) <= 0.1 * abs(b))
 ```
@@ -598,6 +600,20 @@ print("The number of vowels in this string is " + str(count))
 ```
 
 :::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::: keypoints
+
+- "Use `if condition` to start a conditional statement, `elif condition` to
+   provide additional tests, and `else` to provide a default."
+- "The bodies of the branches of conditional statements must be indented."
+- "Use `==` to test for equality."
+- "`X and Y` is only true if both `X` and `Y` are true."
+- "`X or Y` is true if either `X` or `Y`, or both, are true."
+- "Zero, the empty string, and the empty list are considered false;
+   all other numbers, strings, and lists are considered true."
+- "`True` and `False` represent truth values."
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [abs-function]: https://docs.python.org/3/library/functions.html#abs

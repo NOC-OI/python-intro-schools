@@ -1,5 +1,5 @@
 ---
-layout: Reference
+layout: Glossary
 ---
 
 ## Glossary
@@ -263,7 +263,7 @@ layout: Reference
 
 [**tab completion**]{#tab-completion}
 :   A feature of command-line interpreters, in which the program automatically fills in partially
-    typed commands upon pressing the <kbd>Tab</kbdkey.
+    typed commands upon pressing the <kbd>Tab</kbd> key.
 
 [**test oracle**]{#test-oracle}
 :   A program, device, data set, or human being

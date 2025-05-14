@@ -95,7 +95,7 @@ print('final value of temp after all function calls:', temp)
 ```
 
 
-```output
+```error
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-12-ffd9b4dbd5f1in <module>()
@@ -275,7 +275,7 @@ print('first element of color after change:', color[0])
 ```
 
 
-```output
+```error
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-11-9c3dd30a4e52in <module>()

@@ -144,48 +144,70 @@ A Jupyter Notebook provides a browser-based interface for working with Python.
 If you installed Miniforge, you can launch a notebook from the terminal:
 
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::: spoiler
 
 ## Command line (Terminal)
 
-1. Navigate to the `data` directory:
+1\. Navigate to the `data` directory:
 
-- Unix shell
+::::::::::::::::: spoiler
+
+## Unix shell
+
 If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
 in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
-```
+
+```bash
 cd ~/Desktop/swc-python/data
 ```
 
+:::::::::::::::::::::::::
 
-- Command Prompt (Windows)
+::::::::::::::::: spoiler
+
+## Command Prompt (Windows)
+
 On Windows, you can use its native Command Prompt program.  The easiest way to start it up is
-pressing `Windows Logo Key`+`R`, entering `cmd`, and hitting
-`Return`. In the Command Prompt, use the following command to navigate to
+pressing <kbd>Windows Logo Key</kbd>\+<kbd>R</kbd>, entering `cmd`, and hitting
+<kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
 the `data` folder:
-```
+
+```source
 cd /D %userprofile%\Desktop\swc-python\data
 ```
 
-2. Start Jupyter server
+:::::::::::::::::::::::::
 
-- Unix shell
-```
+2\. Start Jupyter server
+
+::::::::::::::::: spoiler
+
+## Unix shell
+
+```bash
 jupyter notebook
 ```
 
+:::::::::::::::::::::::::
 
-- Command Prompt (Windows)
-```
+
+::::::::::::::::: spoiler
+
+## Command Prompt (Windows)
+
+```source
 python -m notebook
 ```
 
-3. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3" from the drop-down menu:
+:::::::::::::::::::::::::
 
-![Anaconda Navigator Notebook directory](
-episodes/fig/jupyter-notebook-launch-notebook2.png){alt="Anaconda Navigator Notebook directory"}
+3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
+from the drop-down menu:
+![](fig/jupyter-notebook-launch-notebook2.png){alt='Anaconda Navigator Notebook directory'}
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::
+
+</br>
 
 ### Option B: IPython interpreter
 
@@ -195,23 +217,24 @@ various convenience features and commands.  You should have IPython on your syst
 [Anaconda][anaconda-instructions].
 
 To start using IPython, execute:
-```bash
+```source
 ipython
 ```
+
+</br>
 
 ### Option C: plain-vanilla Python interpreter
 
 To launch a plain-vanilla Python interpreter, execute:
-```bash
+```source
 python
 ```
 
 
 If you are using [Git Bash on Windows][gitbash], you have to call Python _via_ `winpty`:
-```bash
+```source
 winpty python
 ```
-
 
 [anaconda-install]: https://docs.anaconda.com/anaconda/install
 [anaconda-instructions]: https://carpentries.github.io/workshop-template/#python

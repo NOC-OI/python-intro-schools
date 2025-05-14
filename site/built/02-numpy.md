@@ -1,30 +1,22 @@
 ---
 title: Analyzing some wave-height data
+teaching: 40
+exercises: 20
 ---
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
+::::::::::::::::::::::::::::::::::::::::::  objectives
 
-#### Questions:
-- "How can I process tabular data files in Python?"
-
-#### Objectives:
 - "Explain what a library is and what libraries are used for."
 - "Import a Python library and use the functions it contains."
 - "Read tabular data from a file into a program."
 - "Select individual values and subsections from data."
 - "Perform operations on arrays of data."
 
-#### Keypoints:
-- "Import a library into a program using `import libraryname`."
-- "Use the `numpy` library to work with arrays in Python."
-- "The expression `array.shape` gives the shape of an array."
-- "Use `array[x, y]` to select a single element from a 2D array."
-- "Array indices start at 0, not 1."
-- "Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`."
-- "Use `# some kind of explanation` to add comments to programs."
-- "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
-- "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::  questions
+
+- "How can I process tabular data files in Python?"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -150,7 +142,7 @@ The output tells us that `data` currently refers to an N-dimensional array, the 
 These data correspond to sea wave height. Each row is a monthly average, and the columns are their associated dates and values.
 
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Data Type
 A Numpy array contains one or more elements
@@ -239,7 +231,7 @@ data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 
 data[2, 1] = 'H', and data[2, 2] = 'I',
 in the bottom right hand corner."}
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## In the Corner
 What may also surprise you is that when Python displays an array,
@@ -468,7 +460,7 @@ print(numpy.mean(data[:,2]))
 ```
 
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Not All Functions Have Input
 Generally, a function uses inputs to produce outputs.
@@ -512,7 +504,7 @@ Min wave height: 1.496
 Wave height standard deviation: 1.1440155050316319
 ```
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Getting help on functions
 
@@ -532,7 +524,7 @@ for example: `help(numpy.cumprod)`.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## What about NaNs?
 In real datasets, particularly ones which come from observational data, it's quite common
@@ -890,4 +882,19 @@ array([1.956, 1.806, 1.776, 1.572, 3.6  , 2.418, 0.954, 2.798, 1.338,
 
 
 :::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::::::::  keypoints
+
+- "Import a library into a program using `import libraryname`."
+- "Use the `numpy` library to work with arrays in Python."
+- "The expression `array.shape` gives the shape of an array."
+- "Use `array[x, y]` to select a single element from a 2D array."
+- "Array indices start at 0, not 1."
+- "Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`."
+- "Use `# some kind of explanation` to add comments to programs."
+- "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
+- "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -27,7 +27,7 @@ These values are monthly averages, over a period of 37 years. The first two colu
 5. Plot the result to discuss and share with colleagues
 
 
-![What can we conclude from the data?](
+![](
 episodes/fig/intro.png){alt="3-step flowchart shows a photo of the sea moving to the Analysis step where a heat map of provided data is generated moving to the Conclusion step that asks the question"}
 
 

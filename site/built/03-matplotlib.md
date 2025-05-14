@@ -4,22 +4,20 @@ teaching: 30
 exercises: 20
 ---
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
+::::::::::::::::::::::::::::::::::::::::::  questions
 
-#### Questions:
 - "How can I visualize tabular data in Python?"
 - "How can I group several plots together?"
 
-#### Objectives:
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::::::::::  objectives
+
 - "Plot simple graphs from data."
 - "Plot multiple graphs in a single figure."
 
-#### Keypoints:
-- "Use the `pyplot` module from the `matplotlib` library for creating simple visualizations."
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
 ## Visualizing data
 The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers,"
@@ -173,7 +171,7 @@ Matplotlib from the file name ending we specify; here PNG from
 'wavedata.png'. Matplotlib supports many different graphics
 formats, including SVG, PDF, and JPEG.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Importing libraries with shortcuts
 
@@ -333,7 +331,7 @@ easily with python, but we use to use a different library
 
 We will again use data describing sea waves, but this time looking at a spatial map. This data set shows a static world map, containing data with the multi-year average wave climate. Again, hs_avg is the wave height in metres. But this time, the shape of the matrix is latitude x longitude
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Using other libraries
 
@@ -406,3 +404,10 @@ plt.show()
 
 
 ![](fig/global_surfaceu-colourbar.svg){alt="Global surface waveheight with a colourbar"}
+
+
+::::::::::::::::::::::::::::::::::::::::::::::  keypoints
+
+- "Use the `pyplot` module from the `matplotlib` library for creating simple visualizations."
+
+::::::::::::::::::::::::::::::::::::::::::::::::::

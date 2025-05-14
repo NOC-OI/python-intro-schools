@@ -12,7 +12,7 @@ home:
 template:
   package: varnish
   params:
-    time: 2025-04-30 10:16:31 +0000
+    time: 2025-05-14 14:47:11 +0000
     source: https://github.com/noc-oi/python-novice-esces
     branch: main
     contact: team@carpentries.org

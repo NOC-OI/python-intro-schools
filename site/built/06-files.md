@@ -1,23 +1,22 @@
 ---
 title: Analyzing Data from Multiple Files
+teaching: 20
+exercises: 10
 ---
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
+::::::::::::::::::::::::::::::::::::::::::  questions
 
-#### Questions:
 - "How can I do the same operations on many different files?"
-
-#### Objectives:
-- "Use a library function to get a list of filenames that match a wildcard pattern."
-- "Write a `for` loop to process multiple files."
-
-#### Keypoints:
-- "Use `glob.glob(pattern)` to create a list of files whose names match a pattern."
-- "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+:::::::::::::::::::::::::::::::::::::::::: objectives
+
+- "Use a library function to get a list of filenames that match a wildcard pattern."
+- "Write a `for` loop to process multiple files."
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 When working with real datasets, we may not always have everything in a single file.
@@ -121,7 +120,7 @@ maximum and minimum waveheight in the 1980s."}
 Looking at these three decades, we can see similarities - with the average value representing a smooth climate with clear annual cycle.
 There are differences year on year, and the minimum and maximum data tend to be more variable than the mean.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Different types of division
 
@@ -283,3 +282,11 @@ plt.show()
 
 Congratulations! We've investigated the wave data and spotted some trends, and identified bad / missing data.
 Now that we understand what is in the model data set, and trust that it is realistic, we can use it to make practical decisions about things like boat operations
+
+
+:::::::::::::::::::::::::::::::::::::::::: keypoints
+
+- "Use `glob.glob(pattern)` to create a list of files whose names match a pattern."
+- "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
+
+::::::::::::::::::::::::::::::::::::::::::::::::::

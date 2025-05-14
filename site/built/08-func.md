@@ -1,41 +1,25 @@
 ---
 title: Creating Functions
 teaching: 30
+exercises: 15
 ---
 
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-## About this lesson
+:::::::::::::::::::::::::::::::::::::::::: questions
 
-#### Questions:
 - "How can I define new functions?"
 - "What's the difference between defining and calling a function?"
 - "What happens when I call a function?"
 
-#### Objectives:
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::::::::: objectives
+
 - "Define a function that takes parameters."
-- "Return a value from a function."
-- "Test and debug a function."
+- "Return a value from a function."- "Test and debug a function."
 - "Set default values for function parameters."
 - "Explain why we should divide programs into small, single-purpose functions."
-
-#### Keypoints:
-- "Define a function using `def function_name(parameter)`."
-- "The body of a function must be indented."
-- "Call a function using `function_name(value)`."
-- "Numbers are stored as integers or floating-point numbers."
-- "Variables defined within a function can only be seen and used within the body of the function."
-- "Variables created outside of any function are called global variables."
-- "Within a function, we can access global variables."
-- "Variables created within a function override global variables if their names match."
-- "Use `help(thing)` to view help for something."
-- "Put docstrings in functions to provide help for that function."
-- "Specify default values for parameters when defining a function using `name=value`
-   in the parameter list."
-- "Parameters can be passed by matching based on name, by position,
-   or by omitting them (in which case the default value is used)."
-- "Put code whose parameters change frequently in a function,
-   then call it with different parameter values to customize its behavior."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -163,7 +147,7 @@ print('Again, temperature in Kelvin was:', temp_k)
 ```
 
 
-```output
+```error
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-1-eed2471d229bin <module>
@@ -511,7 +495,7 @@ np.loadtxt('reshaped_data.csv', ',')
 ```
 
 
-```output
+```error
 Traceback (most recent call last):
 
   File ~/mambaforge/envs/python-workshop/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3579 in run_code
@@ -1003,7 +987,7 @@ not passed a value, so it uses its default value 6.
 :::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+::::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Readable Code
 
@@ -1011,4 +995,25 @@ Revise a function you wrote for one of the previous exercises to try to make
 the code more readable. Then, collaborate with one of your neighbors
 to critique each other's functions and discuss how your function implementations
 could be further improved to make them more readable.
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::: keypoints
+
+- "Define a function using `def function_name(parameter)`."
+- "The body of a function must be indented."
+- "Call a function using `function_name(value)`."
+- "Numbers are stored as integers or floating-point numbers."
+- "Variables defined within a function can only be seen and used within the body of the function."
+- "Variables created outside of any function are called global variables."
+- "Within a function, we can access global variables."
+- "Variables created within a function override global variables if their names match."
+- "Use `help(thing)` to view help for something."
+- "Put docstrings in functions to provide help for that function."
+- "Specify default values for parameters when defining a function using `name=value`
+   in the parameter list."
+- "Parameters can be passed by matching based on name, by position,
+   or by omitting them (in which case the default value is used)."
+- "Put code whose parameters change frequently in a function,
+   then call it with different parameter values to customize its behavior."
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
