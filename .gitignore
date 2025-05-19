@@ -3,6 +3,8 @@ episodes/*html
 site/*
 !site/README.md
 
+site/built/*
+site/docs/*
 # History files
 .Rhistory
 .Rapp.history
