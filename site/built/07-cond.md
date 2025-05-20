@@ -30,7 +30,7 @@ We can ask Python to take different actions, depending on a condition, with an `
 
 ```python
 num = 37
-if num 100:
+if num > 100:
     print("greater")
 else:
     print("not greater")
@@ -61,7 +61,7 @@ Python simply does nothing if the test is false:
 ```python
 num = 53
 print('before conditional...')
-if num 100:
+if num > 100:
     print(num, "is greater than 100")
 print('...after conditional')
 ```
@@ -80,7 +80,7 @@ The following Python code uses `elif` to print the sign of a number.
 ```python
 num = -3
 
-if num 0:
+if num > 0:
     print(num, "is positive")
 elif num == 0:
     print(num, "is zero")
@@ -116,7 +116,7 @@ We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
 
 ```python
-if (1 0) and (-1 >= 0):
+if (1 > 0) and (-1 >= 0):
     print("both parts are true")
 else:
     print("at least one part is false")
@@ -290,7 +290,7 @@ freeing us from having to manually examine every plot for features we've seen be
 Consider this code:
 
 ```python
-if 4 5:
+if 4 > 5:
     print("A")
 elif 4 == 5:
     print("B")
@@ -308,7 +308,7 @@ Why did you pick this answer?
 4.  B and C
 
 :::::::::::::::  solution
-C gets printed because the first two conditions, `4 5` and `4 == 5`, are not true,
+C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
 but `4 < 5` is true.
 :::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::
