@@ -327,7 +327,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Analyzing Data from Multiple Files</h1>
-        <p>Last updated on 2025-05-14 |
+        <p>Last updated on 2025-05-21 |
 
         <a href="https://github.com/noc-oi/python-novice-esces/edit/main/episodes/06-files.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -554,7 +554,7 @@ represented in the dataset.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>number_of_rows <span class="op">=</span> reshaped_data.shape[<span class="dv">0</span>]</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>number_of_rows <span class="op">=</span> data.shape[<span class="dv">0</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="co"># assume that every 12 rows represents one year of data and there's no missing data</span></span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>number_of_years <span class="op">=</span> number_of_rows<span class="op">//</span><span class="dv">12</span></span>
 <span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>data <span class="op">=</span> numpy.reshape(data[:,<span class="dv">2</span>], [number_of_years,<span class="dv">12</span>])</span>
@@ -726,8 +726,8 @@ and <code>?</code> to match any single character.”</li>
   "url": "https://noc-oi.github.io/python-novice-esces/instructor/06-files.html",
   "identifier": "https://noc-oi.github.io/python-novice-esces/instructor/06-files.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2025-05-14",
-  "datePublished": "2025-05-20"
+  "dateModified": "2025-05-21",
+  "datePublished": "2025-05-21"
 }
 
   </script><script>

@@ -204,7 +204,7 @@ If we plot the reshaped data, we would see white squares where there are NaNs in
 Let's do the shaping operation again but this time in a more generic way where we don't need to know how many years are represented in the dataset.
 
 ```python
-number_of_rows = reshaped_data.shape[0]
+number_of_rows = data.shape[0]
 # assume that every 12 rows represents one year of data and there's no missing data
 number_of_years = number_of_rows//12
 data = numpy.reshape(data[:,2], [number_of_years,12])
