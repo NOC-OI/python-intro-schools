@@ -62,11 +62,6 @@ episodes:
 - 01-intro.md
 - 02-numpy.md
 - 03-matplotlib.md
-- 04-lists.md
-- 05-loop.md
-- 06-files.md
-- 07-cond.md
-- 08-func.md
 
 # Information for Learners
 learners:

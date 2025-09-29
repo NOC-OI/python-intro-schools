@@ -189,27 +189,6 @@ weight in kilograms is now: 75.0
 ```
 
 
-
-## Printing variables with f-strings
-
-Earlier on we just printed text in one print statement, and output
-in a different print statement. However, in the last example, we printed text and
-output in the same print statement. Python has several ways to achieve this, we can use a comma seperated list of
-things to print. Another approach is known as ["Formatted string literals"](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals),
-but more commonly called "f-strings". We need to prefix the string with the letter 'f', but then
-anything within curly brackets is interpreted by python. Variable names can be referenced by wrapping them in '{' and '} symbols.
-
-```python
-weight_kg = 65.0
-print(f'weight in kilograms is now: {weight_kg}')
-```
-
-
-F-strings can be used in most cases where we want to print output with text, there are many more advanced options for them that can control things such as the number of
-decimal places printed out on floating point values.
-
-::::::::::::::::::::::::::::::::::::::::::  callout
-
 ## Variables as Sticky Notes
 
 A variable in Python is analogous to a sticky note with a name written on it:
@@ -259,7 +238,7 @@ stuck on it"}
 Since `weight_lb` doesn't "remember" where its value comes from,
 it is not updated when we change `weight_kg`.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Comments in Python
 
@@ -360,7 +339,6 @@ print(type(distance))
 - "Use `variable = value` to assign a value to a variable in order to record it in memory."
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
-- "F-strings can be used to display variables without ending quotes using the syntax `print(f'some text {variable}')`"
 - "Built-in functions are always available to use."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
