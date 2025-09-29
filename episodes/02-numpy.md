@@ -29,7 +29,7 @@ that can be called upon when needed.
 
 ## Loading data into Python
 
-To begin processing the wavedata, we need to load it into Python.
+To begin processing the Argo data, we need to load it into Python.
 We can do that using a library called
 [NumPy](https://numpy.org/doc/stable "NumPy Documentation"), which stands for Numerical Python.
 In general, you should use this library when you want to do fancy things with lots of numbers,
@@ -40,7 +40,6 @@ we need to [import](learners/reference.md#import) it:
 import numpy
 ```
 
-
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it
 up on the bench. Libraries provide additional functionality to the basic Python package, much like
 a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
@@ -50,18 +49,18 @@ need for each program.
 Once we've imported the library, we can ask the library to read our data file for us:
 
 ```python
-numpy.loadtxt(fname='wavesmonthly.csv', delimiter=',', skiprows=1)
+numpy.loadtxt(fname='argo_data.csv', delimiter=',', skiprows=1)
 ```
 
 
 ```output
-array([[1.979e+03, 1.000e+00, 3.788e+00],
-       [1.979e+03, 2.000e+00, 3.768e+00],
-       [1.979e+03, 3.000e+00, 4.774e+00],
+array([[0.0000000e+00, 3.5025002e+01, 2.8898001e+01, 3.0000000e+00],
+       [1.0000000e+00, 3.5026001e+01, 2.8898001e+01, 4.0000000e+00],
+       [2.0000000e+00, 3.5026001e+01, 2.8896000e+01, 5.0000000e+00],
        ...,
-       [2.015e+03, 1.000e+01, 3.046e+00],
-       [2.015e+03, 1.100e+01, 4.622e+00],
-       [2.015e+03, 1.200e+01, 5.048e+00]], shape=(444, 3))
+       [1.0500000e+02, 3.4988998e+01, 3.7710000e+00, 1.9380000e+03],
+       [1.0600000e+02, 3.4987999e+01, 3.7340000e+00, 1.9630000e+03],
+       [1.0700000e+02, 3.4987999e+01, 3.6930000e+00, 1.9890000e+03]])
 ```
 
 
@@ -99,7 +98,7 @@ value to a variable, we can also assign an array of values to a variable using t
 Let's re-run `numpy.loadtxt` and save the returned data:
 
 ```python
-data = numpy.loadtxt(fname='wavesmonthly.csv', delimiter=',', skiprows=1)
+data = numpy.loadtxt(fname='argo_data.csv', delimiter=',', skiprows=1)
 ```
 
 
@@ -113,13 +112,13 @@ print(data)
 
 
 ```output
-[[1.979e+03 1.000e+00 3.788e+00]
- [1.979e+03 2.000e+00 3.768e+00]
- [1.979e+03 3.000e+00 4.774e+00]
+[[0.0000000e+00 3.5025002e+01 2.8898001e+01 3.0000000e+00]
+ [1.0000000e+00 3.5026001e+01 2.8898001e+01 4.0000000e+00]
+ [2.0000000e+00 3.5026001e+01 2.8896000e+01 5.0000000e+00]
  ...
- [2.015e+03 1.000e+01 3.046e+00]
- [2.015e+03 1.100e+01 4.622e+00]
- [2.015e+03 1.200e+01 5.048e+00]]
+ [1.0500000e+02 3.4988998e+01 3.7710000e+00 1.9380000e+03]
+ [1.0600000e+02 3.4987999e+01 3.7340000e+00 1.9630000e+03]
+ [1.0700000e+02 3.4987999e+01 3.6930000e+00 1.9890000e+03]]
 ```
 
 
@@ -169,12 +168,12 @@ print(data.shape)
 
 
 ```output
-(444, 3)
+(108, 4)
 ```
 
 
-The output tells us that the `data` array variable contains 444 rows (sanity check:  37 years of 12 months = 37 * 12 = 444) and 3 columns
- (year, month, and datapoint). When we created the variable `data` to store our wave data, we did not only create the array; we also
+The output tells us that the `data` array variable contains 108 rows and 4 columns
+ (sequence number, conductivity/salinity, temperature and pressure/depth). When we created the variable `data` to store our wave data, we did not only create the array; we also
 created information about the array, called [members](learners/reference.md#member) or
 attributes. This extra information describes `data` in the same way an adjective describes a noun.
 `data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same
@@ -187,26 +186,26 @@ do in math when referring to an element of a matrix.  Our wave data has two dime
 we will need to use two indices to refer to one specific value:
 
 ```python
-print('first value in data:', data[0, 2])
+print('first temperature value in data:', data[0, 2])
 ```
 
 
 ```output
-first value in data: 3.788
+first value in data: 28.898001
 ```
 
 
 ```python
-print('middle value in data:', data[222, 2])
+print('middle temperature value in data:', data[54, 2])
 ```
 
 
 ```output
-middle value in data: 2.446
+middle value in data: 9.278
 ```
 
 
-The expression `data[222, 2]` accesses the element at row 222, column 2. While this expression may
+The expression `data[54, 2]` accesses the element at row 54, column 2. While this expression may
 not surprise you, using
  `data[0, 2]` to get the _3rd_ column in the _1st_ row might.
 Programming languages like Fortran, MATLAB and R start counting at 1
@@ -245,57 +244,43 @@ which can be confusing when plotting data.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Slicing data
-An index like `[222, 2]` selects a single element of an array,
+An index like `[54, 2]` selects a single element of an array,
 but we can select whole sections as well.
 For example,
-we can select the wavedata for the first year like this:
+we can select the Argo data for the first five readings like this:
 
 ```python
-print(data[0:12, 0:3])
+print(data[0:5, 0:4])
 ```
 
 
 ```output
-[[1.979e+03 1.000e+00 3.788e+00]
- [1.979e+03 2.000e+00 3.768e+00]
- [1.979e+03 3.000e+00 4.774e+00]
- [1.979e+03 4.000e+00 2.818e+00]
- [1.979e+03 5.000e+00 2.734e+00]
- [1.979e+03 6.000e+00 2.086e+00]
- [1.979e+03 7.000e+00 2.066e+00]
- [1.979e+03 8.000e+00 2.236e+00]
- [1.979e+03 9.000e+00 3.322e+00]
- [1.979e+03 1.000e+01 3.512e+00]
- [1.979e+03 1.100e+01 4.348e+00]
- [1.979e+03 1.200e+01 4.628e+00]]
+[[ 0.       35.025002 28.898001  3.      ]
+ [ 1.       35.026001 28.898001  4.      ]
+ [ 2.       35.026001 28.896     5.      ]
+ [ 3.       35.025002 28.893     6.      ]
+ [ 4.       35.025002 28.892     7.      ]]
 ```
 
 
-The [slice](learners/reference.md#slice) `0:12` means, "Start at index 0 and go up to,
-but not including, index 12". Again, the up-to-but-not-including takes a bit of getting used to,
+The [slice](learners/reference.md#slice) `0:5` means, "Start at index 0 and go up to,
+but not including, index 5". Again, the up-to-but-not-including takes a bit of getting used to,
 but the rule is that the difference between the upper and lower bounds is the number of values in
 the slice.
 
 We don't have to start slices at 0:
 
 ```python
-print(data[12:24, 1:3])
+print(data[5:10, 1:4])
 ```
 
 
 ```output
-[[ 1.     3.666]
- [ 2.     4.326]
- [ 3.     3.522]
- [ 4.     3.18 ]
- [ 5.     1.954]
- [ 6.     1.72 ]
- [ 7.     1.86 ]
- [ 8.     1.95 ]
- [ 9.     3.11 ]
- [10.     3.78 ]
- [11.     3.474]
- [12.     5.28 ]]
+[[35.027    28.896     8.      ]
+ [35.025002 28.902     9.      ]
+ [35.026001 28.900999 10.      ]
+ [35.027    28.907    16.      ]
+ [35.549999 28.858999 26.      ]]
 ```
 
 
@@ -305,27 +290,20 @@ axis, and if we don't include either (i.e., if we use ':' on its own), the slice
 everything:
 
 ```python
-first_year = data[:12, 2:]
-print('data from first year is:')
+first_five = data[:5, 1:]
+print('data from first five readings is:')
 print(first_year)
 ```
 
-The above example selects rows 0 through 11 and columns 2 through to the end of the array (which in this case is _only_ the last column).
+The above example selects rows 0 through 4 and columns 1 through to the end of the array (which gives us the salinity, temperature and depth).
 
 ```output
-data from first year is:
-[[3.788]
- [3.768]
- [4.774]
- [2.818]
- [2.734]
- [2.086]
- [2.066]
- [2.236]
- [3.322]
- [3.512]
- [4.348]
- [4.628]]
+data from first five readings is:
+[[35.025002 28.898001  3.      ]
+ [35.026001 28.898001  4.      ]
+ [35.026001 28.896     5.      ]
+ [35.025002 28.893     6.      ]
+ [35.025002 28.892     7.      ]]
 ```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -363,12 +341,92 @@ oxygen
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+## Loading data with ArgoPy
+
+Instead of passing around spreadsheets or CSV files of data, all of the data recorded by Argo floats is sent to a 
+Data Assembly Centre (DAC). After some checks of the data have been made it is sent to a Global Data Assembly Centre (GDAC).
+There are two of these, one in the USA and one in France, but they both hold a copy of all of the Argo data ever received. 
+To make accessing the data easy from Python a special library called `argopy` has been developed. This can load data directly
+from one of the GDACs and turn it into a Numpy array. This saves us having to search through the GDAC, picking the data we want and downloading it to file on our computer. 
+
+```python
+import argopy
+```
+
+The `argopy` library has a lot of different features, but we want to use the `ArgoDataFetcher` function which gets data from a GDAC. 
+The `ArgoDataFetcher` will return something called a class that has more functions we can call. One of these is called `profile` and that 
+gets an individual profile given a float number and a profile number. The data we've been using came from profile 12 of float number 6902746.
+
+```python
+argopy.ArgoDataFetcher().profile(6902746, 12)
+```
+
+If we run the profile function with the float number and profile number we get back a `datafetcher.erddap` object.
+
+
+```output
+<datafetcher.erddap>
+Name: Ifremer erddap Argo data fetcher for floats
+API: https://erddap.ifremer.fr/erddap/
+Domain: phy;WMO6902746
+Performances: cache=False, parallel=False
+User mode: standard
+Dataset: phy
+```
+
+This doesn't contain much useful data, although it does tell us which GDAC supplied the data. To get the actual data we need to call
+yet another function that the `datafetcher.erdapp` object provides called `to_xarray`. This gets the data for processing in another
+library called Xarray, which works well with Numpy data but is very good at working with really big datasets. 
+
+```python
+argopy.DataFetcher().profile(6902746, 12).to_xarray()
+```
+
+Now we get a lot more information including a list of what data variables this float has. To get one of those we add it's name to the 
+end of the command, for example to get temperature we add `.TEMP`.
+
+```python
+argopy.DataFetcher().profile(6902746, 12).to_xarray().TEMP
+```
+Now we have something which just looks like real data. However one last thing, the type of this data is `xarray.DataArray` not `numpy.ndarray`.
+To do that final conversion we add `.values` on the end, note that there's no brackets on this as this is a variable name not a function.
+
+```python
+argopy.DataFetcher().profile(6902746, 12).to_xarray().TEMP.values
+```
+
+Let's capture this into a variable called `temp_data` and check it's type.
+
+```python
+temp_data=argopy.DataFetcher().profile(6902746, 12).to_xarray().TEMP.values
+type(temp_data)
+```
+
+and now we have a Numpy array with our temperature data. 
+
+```output
+numpy.ndarray
+```
+
+This should be the same as the 3rd (2nd if you count from zero!) column of our earlier data.
+Let's do a basic check of this by comparing the mean values.
+
+```
+temp_data.mean()
+data[:,2].mean()
+```
+
+```output
+13.05863885747062
+13.058638888888888
+```
+
+The values are slightly differnent because when they got saved into the CSV file they got rounded a little bit. 
 
 ## Analyzing data
 
 NumPy has several useful functions that take an array as input to perform operations on its values.
-If we want to find the average wave height for all months on
-all years, for example, we can ask NumPy to compute `data`'s mean value:
+If we want to find the average of all our Argo float data, for example, we can ask NumPy to compute `data`'s mean value:
 
 ```python
 print(numpy.mean(data))
@@ -376,24 +434,23 @@ print(numpy.mean(data))
 
 
 ```output
-668.9611876876877
+219.47419444212963
 ```
 
 
 `mean` is a [function](learners/reference.md#function) that takes
 an array as an [argument](learners/reference.md#argument). Given that our
-array contains the dates as well as data, with numbers relating to years and months, taking the mean of the
-whole array doesn't really make much sense - we don't expect to see 600 metre high waves!
+array contains the sequence numbers and three different data variables taking the mean of the
+whole array doesn't really make much sense.
 
-We can use slicing to calculate the correct mean:
+We can use slicing to calculate the mean temperature from our dive:
 
 ```python
 print(numpy.mean(data[:,2]))
 ```
 
-
 ```output
-3.383563063063063
+13.058638888888888
 ```
 
 
@@ -417,28 +474,26 @@ to tell Python to go and do something for us.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Let's use three other NumPy functions to get some descriptive values about the wave heights.
+Let's use three other NumPy functions to get some descriptive values about the temperature range.
 We'll also use multiple assignment,
 a convenient Python feature that will enable us to do this all in one line.
 
 ```python
-maxval, minval, stdval = numpy.max(data[:,2]), numpy.min(data[:,2]), numpy.std(data[:,2])
+maxval = numpy.max(data[:,2])
+minval = numpy.min(data[:,2])
 
-print('Max wave height:', maxval)
-print('Min wave height:', minval)
-print('Wave height standard deviation:', stdval)
+print('Max temperature:', maxval)
+print('Min temperature:', minval)
 ```
 
-
-Here we've assigned the return value from `numpy.max(data[:,2])` to the variable `maxval`, the value
-from `numpy.min(data[:,2])` to `minval`, and so on. Note that we used `maxval`, rather than just `max` - it's
+Here we've assigned the return value from `numpy.max(data[:,2])` to the variable `maxval` and the value
+from `numpy.min(data[:,2])` to `minval`. Note that we used `maxval`, rather than just `max` - it's
 not good practice to use variable names that are the same as [Python keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords)
 or fuction names.
 
 ```output
-Max wave height: 6.956
-Min wave height: 1.496
-Wave height standard deviation: 1.1440155050316319
+Max temperature: 28.907
+Min temperature: 3.693
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::  callout
@@ -470,108 +525,35 @@ numpy.savetxt("reshaped_data.csv", reshaped_data, delimiter=',')
 ```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
-## Change In Wave Height
+## Find the temperature range for an Arctic float
 
-In the wave data, one row represents a series of monthly data relating to one year. This means that
-the change in height over time is a meaningful concept representing seasonal changes.
-Let's find out how to calculate changes in the data contained in an array
-with NumPy.
+The float 5906983 has been deployed in the Arctic by NOC for the MetOffice. You can see a map of where it's been at
+https://fleetmonitoring.euro-argo.eu/float/5906983.
 
-The `numpy.diff()` function takes an array and returns the differences
-between two successive values. Let's use it to examine the changes
-each day across the first 6 months of waves in year 4 from our dataset.
+Adapt the code above to load profile number 33 from float 5906983. 
+Calculate it's minimum, maximum, mean and median temperature. 
 
-```python
-year4 = reshaped_data[3, :]
-print(year4)
-```
-
-
-```output
-[3.73  4.886 4.76  3.188 2.528 1.662 1.952 2.388 3.336 4.034 4.502 5.438]
-```
-
-
-Calling `numpy.diff(year4)` would do the following calculations
-
-```output
-[ 4.886 - 3.73, 4.76 - 4.886, 3.188 - 4.76, 2.528 - 3.188, 1.662 - 2.528, 1.952 - 1.662, 2.388 - 1.952, 3.336 - 2.388, 4.034 - 3.336, 4.502 - 4.034, 5.438 - 4.502 ]
-```
-
-
-and return the 11 difference values in a new array.
-
-```python
-numpy.diff(year4)
-```
-
-
-```output
-[ 1.156 -0.126 -1.572 -0.66  -0.866  0.29   0.436  0.948  0.698  0.468
- 0.936]
-```
-
-
-Note that the array of differences is shorter by one element (length 11).
-Where we see a negative change in wave height, it shows that the sea is becoming calmer as we move towards the summer. Positive wave heights in the autumn show waves are increasing.
-
-If the shape of an individual data file is `(60, 40)` (60 rows and 40
-columns), what would the shape of the array be after you run the `diff()`
-function and why?
+We haven't calculated median before, search on the internet or look at the NumPy documentation 
+(https://numpy.org/devdocs/reference/routines.statistics.html) to find out how to calculate this.
 
 :::::::::::::::  solution
 
-The shape will be `(60, 39)` because there is one fewer difference between
-columns than there are columns in the data.
-{: .solution}
+temperatures = ArgoDataFetcher().profile(5906983, 33).to_xarray().TEMP.values
 
-How would you find the largest change in wave height from month to month within each year?
-What does it mean if the change in height is an increase or a decrease?
+maxval = numpy.max(temperatures)
+minval = numpy.min(temperatures)
+meanval = numpy.mean(temperatures)
+medianval = numpy.median(temperatures)
 
-:::::::::::::::::::::::::
-
-:::::::::::::::  solution
-
-By using the `numpy.max()` function after you apply the `numpy.diff()`
-function, you will get the largest difference between months.
-
-```python
-numpy.max(numpy.diff(reshaped_data, axis=1), axis=1)
-```
-
-
-```output
-array([1.086, 1.806, 1.776, 1.156, 1.692, 1.274, 0.798, 2.59 , 1.338,
-      1.634, 0.992, 0.618, 1.054, 1.652, 1.472, 1.716, 0.766, 1.496,
-      1.656, 1.04 , 1.228, 1.336, 1.564, 1.066, 1.242, 1.604, 0.802,
-      1.04 , 0.652, 0.86 , 1.176, 0.97 , 1.68 , 1.556, 1.904, 2.936,
-      1.578])
-```
-
-
-If wave height values *decrease* along an axis, then the difference from
-one element to the next will be negative. If
-you are interested in the **magnitude** of the change and not the
-direction, the `numpy.absolute()` function will provide that.
-
-Notice the difference if you get the largest _absolute_ difference
-between readings.
-
-```python
-numpy.max(numpy.absolute(numpy.diff(reshaped_data, axis=1)), axis=1)
-```
-
-
-```output
-array([1.956, 1.806, 1.776, 1.572, 3.6  , 2.418, 0.954, 2.798, 1.338,
-       1.634, 2.13 , 0.93 , 1.054, 1.71 , 1.68 , 2.   , 1.614, 1.496,
-       2.308, 1.04 , 2.014, 1.68 , 1.564, 1.596, 1.528, 1.604, 1.468,
-       1.21 , 1.012, 0.86 , 1.732, 1.03 , 1.68 , 1.774, 1.904, 2.936,
-       1.694])
-```
+print('Max temperature:', maxval)
+print('Min temperature:', minval)
+print('Mean Temperature:', meanval)
+print('Median Temperature:', medianval)
 
 
 :::::::::::::::::::::::::
+
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
