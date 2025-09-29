@@ -405,26 +405,6 @@ last three characters: hi
 :::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Thin Slices
-
-The expression `element[3:3]` produces an
-[empty string](learners/reference.md#empty-string),
-i.e., a string that contains no characters.
-If `data` holds our array of wave data,
-what does `data[3:3, 4:4]` produce?
-What about `data[3:3, :]`?
-
-:::::::::::::::  solution
-```python
-array([], shape=(0, 0), dtype=float64)
-array([], shape=(0, 3), dtype=float64)
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Analyzing data
