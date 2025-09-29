@@ -279,30 +279,6 @@ age = age - 20
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Sorting Out References
-
-Python allows you to assign multiple values to multiple variables in one line by separating
-the variables and values with commas. What does the following program print out?
-
-```python
-first, second = 'Grace', 'Hopper'
-third, fourth = second, first
-print(third, fourth)
-```
-
-
-:::::::::::::::  solution
-```output
-Hopper Grace
-```
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
 ## Seeing Data Types
 
 What are the data types of the following variables?
