@@ -1,5 +1,5 @@
 ---
-title: Visualizing Tabular Data
+title: Visualizing Argo Data
 teaching: 15
 exercises: 15
 ---
