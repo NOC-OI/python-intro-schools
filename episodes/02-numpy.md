@@ -1,7 +1,7 @@
 ---
-title: Analyzing some wave-height data
-teaching: 40
-exercises: 20
+title: Loading and Analyzing Argo Float Data
+teaching: 20
+exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::::::  objectives
@@ -137,8 +137,8 @@ print(type(data))
 ```
 
 
-The output tells us that `data` currently refers to an N-dimensional array, the functionality for which is provided by the NumPy library.
-These data correspond to sea wave height. Each row is a monthly average, and the columns are their associated dates and values.
+The output tells us that `data` currently refers to a NumPy array, the functionality for which is provided by the NumPy library.
+These data correspond to Argo float data. Each row represents one reading and the columns are the different data values.
 
 
 ::::::::::::::::::::::::::::::::::::::::::  callout
@@ -173,16 +173,11 @@ print(data.shape)
 
 
 The output tells us that the `data` array variable contains 108 rows and 4 columns
- (sequence number, conductivity/salinity, temperature and pressure/depth). When we created the variable `data` to store our wave data, we did not only create the array; we also
-created information about the array, called [members](learners/reference.md#member) or
-attributes. This extra information describes `data` in the same way an adjective describes a noun.
-`data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same
-dotted notation for the attributes of variables that we use for the functions in libraries because
-they have the same part-and-whole relationship.
+ (sequence number, conductivity/salinity, temperature and pressure/depth). 
 
 If we want to get a single number from the array, we must provide an
 [index](learners/reference.md#index) in square brackets after the variable name, just as we
-do in math when referring to an element of a matrix.  Our wave data has two dimensions, so
+do in math when referring to an element of a matrix.  Our data has two dimensions, so
 we will need to use two indices to refer to one specific value:
 
 ```python
@@ -340,6 +335,26 @@ oxygen
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::::::::  callout
+
+## Not All Functions Have Input
+Generally, a function uses inputs to produce outputs.
+However, some functions produce outputs without
+needing any input. For example, checking the current time
+doesn't require any input.
+```python
+import time
+print(time.ctime())
+```
+```output
+Sat Mar 26 13:07:33 2016
+```
+For functions that don't take in any arguments,
+we still need parentheses (`()`)
+to tell Python to go and do something for us.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Loading data with ArgoPy
 
@@ -353,12 +368,12 @@ from one of the GDACs and turn it into a Numpy array. This saves us having to se
 import argopy
 ```
 
-The `argopy` library has a lot of different features, but we want to use the `ArgoDataFetcher` function which gets data from a GDAC. 
+The `argopy` library has a lot of different features, but we want to use the `DataFetcher` function which gets data from a GDAC. 
 The `ArgoDataFetcher` will return something called a class that has more functions we can call. One of these is called `profile` and that 
 gets an individual profile given a float number and a profile number. The data we've been using came from profile 12 of float number 6902746.
 
 ```python
-argopy.ArgoDataFetcher().profile(6902746, 12)
+argopy.DataFetcher().profile(6902746, 12)
 ```
 
 If we run the profile function with the float number and profile number we get back a `datafetcher.erddap` object.
@@ -453,27 +468,6 @@ print(numpy.mean(data[:,2]))
 13.058638888888888
 ```
 
-
-::::::::::::::::::::::::::::::::::::::::::  callout
-
-## Not All Functions Have Input
-Generally, a function uses inputs to produce outputs.
-However, some functions produce outputs without
-needing any input. For example, checking the current time
-doesn't require any input.
-```python
-import time
-print(time.ctime())
-```
-```output
-Sat Mar 26 13:07:33 2016
-```
-For functions that don't take in any arguments,
-we still need parentheses (`()`)
-to tell Python to go and do something for us.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 Let's use three other NumPy functions to get some descriptive values about the temperature range.
 We'll also use multiple assignment,
 a convenient Python feature that will enable us to do this all in one line.
@@ -515,14 +509,6 @@ for example: `help(numpy.cumprod)`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Saving Data
-
-There are occasions though the rest of the lesson when we will want to use the reshaped data. If we close this Notebook, we'll
-lose the variables we've created, so let's save the reshaped data to a file:
-
-```python
-numpy.savetxt("reshaped_data.csv", reshaped_data, delimiter=',')
-```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 ## Find the temperature range for an Arctic float
@@ -538,7 +524,8 @@ We haven't calculated median before, search on the internet or look at the NumPy
 
 :::::::::::::::  solution
 
-temperatures = ArgoDataFetcher().profile(5906983, 33).to_xarray().TEMP.values
+```python
+temperatures = argopy.DataFetcher().profile(5906983, 33).to_xarray().TEMP.values
 
 maxval = numpy.max(temperatures)
 minval = numpy.min(temperatures)
@@ -549,7 +536,14 @@ print('Max temperature:', maxval)
 print('Min temperature:', minval)
 print('Mean Temperature:', meanval)
 print('Median Temperature:', medianval)
+```
 
+```output
+Max temperature: 7.463699817657471
+Min temperature: -0.6674000024795532
+Mean Temperature: 2.9974963312872487
+Median Temperature: 3.9305999279022217
+```
 
 :::::::::::::::::::::::::
 
@@ -565,8 +559,7 @@ print('Median Temperature:', medianval)
 - "Use `array[x, y]` to select a single element from a 2D array."
 - "Array indices start at 0, not 1."
 - "Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`."
-- "Use `# some kind of explanation` to add comments to programs."
 - "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
-- "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
+- "The `argopy` library can load Argo float data over the internet from the GDAC"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -22,7 +22,7 @@ exercises: 10
 
 ## Variables
 
-Any Python interpreter can be used as a calculator:
+Python can be used as a calculator:
 ```python
 3 + 5 * 4
 ```
