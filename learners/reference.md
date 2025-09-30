@@ -4,21 +4,10 @@ layout: Glossary
 
 ## Glossary
 
-[**additive color model**]{#additive-color-model}
-:   A way to represent colors as the sum of contributions from primary colors
-    such as [red, green, and blue](#rgb).
 
 [**argument**]{#argument}
 :   A value given to a function or program when it runs.
     The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
-
-[**assertion**]{#assertion}
-:   An expression which is supposed to be true at a particular point in a program.
-    Programmers typically put assertions in their code to check for errors;
-    if the assertion fails (i.e., if the expression evaluates as false),
-    the program halts and produces an error message.
-    See also: [invariant](#invariant), [precondition](#precondition),
-    [postcondition](#postcondition).
 
 [**assign**]{#assign}
 :   To give a value a name by associating a variable with it.
@@ -26,8 +15,6 @@ layout: Glossary
 [**body**]{#body}
 :   (of a function): the statements that are executed when a function runs.
 
-[**call stack**]{#call-stack}
-:   A data structure inside a running program that keeps track of active function calls.
 
 [**case-insensitive**]{#case-insensitive}
 :   Treating text as if upper and lower case characters of the same letter were the same.
@@ -48,10 +35,6 @@ layout: Glossary
 [**compose**]{#compose}
 :   To apply one function to the result of another, such as `f(g(x))`.
 
-[**conditional statement**]{#conditional-statement}
-:   A statement in a program that might or might not be executed
-    depending on whether a test is true or false.
-
 [**comma-separated values**]{#comma-separated-values}
 :   (CSV) A common textual representation for tables
     in which the values in each row are separated by commas.
@@ -59,19 +42,11 @@ layout: Glossary
 [**default value**]{#default-value}
 :   A value to use for a [parameter](#parameter) if nothing is specified explicitly.
 
-[**defensive programming**]{#defensive-programming}
-:   The practice of writing programs that check their own operation
-    to catch errors as early as possible.
 
 [**delimiter**]{#delimiter}
 :   A character or characters used to separate individual values,
     such as the commas between columns in a [CSV](#comma-separated-values) file.
 
-[**docstring**]{#docstring}
-:   Short for "documentation string",
-    this refers to textual documentation embedded in Python programs.
-    Unlike comments, docstrings are preserved in the running program
-    and can be examined in interactive sessions.
 
 [**documentation**]{#documentation}
 :   Human-language text written to explain what software does,
@@ -94,10 +69,6 @@ layout: Glossary
 :   A number containing a fractional part and an exponent.
     See also: [integer](#integer).
 
-[**for loop**]{#for-loop}
-:   A loop that is executed once for each value in some kind of set, list, or range.
-    See also: [while loop](#while-loop).
-
 [**function**]{#function}
 :   A named group of instructions that is executed when the function's name is used in
     the code. Occurrence of a function name in the code is a [function call](#function-call).
@@ -114,15 +85,6 @@ layout: Glossary
 :   A variable defined outside of a function. It can be used in global statements,
     and read inside functions.
 
-[**heat map**]{#heat-map}
-:   A graphical representation of two-dimensional data in which colors,
-    ranging on a scale of hue or intensity, represent the data values.
-
-[**immutable**]{#immutable}
-:   Unchangeable.
-    The value of immutable data cannot be altered after it has been created.
-    See also: [mutable](#mutable).
-
 [**import**]{#import}
 :   To load a [library](#library) into a program.
 
@@ -135,9 +97,6 @@ layout: Glossary
 [**index**]{#index}
 :   A subscript that specifies the location of a single value in a collection,
     such as a single pixel in an image.
-
-[**inner loop**]{#inner-loop}
-:   A loop that is inside another loop. See also: [outer loop](#outer-loop).
 
 [**integer**]{#integer}
 :   A whole number, such as -12343. See also: [floating-point number](#floating-point-number).
@@ -154,9 +113,6 @@ layout: Glossary
 [**local variable**]{#local-variable}
 :   A variable defined inside of a function, that exists only in the scope of that
     function, meaning it cannot be accessed by code outside of the function.
-
-[**loop variable**]{#loop-variable}
-:   The variable that keeps track of the progress of the loop.
 
 [**member**]{#member}
 :   A variable contained within an [object](#object).
@@ -179,18 +135,10 @@ layout: Glossary
 :   A collection of conceptually related variables ([members](#member)) and
     functions using those variables ([methods](#method)).
 
-[**outer loop**]{#outer-loop}
-:   A loop that contains another loop.
-    See also: [inner loop](#inner-loop).
-
 [**parameter**]{#parameter}
 :   A variable named in the function's declaration that is used to
     hold a value passed into the call.
     The term is often used interchangeably (and inconsistently) with [argument](#argument).
-
-[**pipe**]{#pipe}
-:   A connection from the output of one program to the input of another.
-    When two or more programs are connected in this way, they are called a "pipeline".
 
 [**postcondition**]{#postcondition}
 :   A condition that a function (or other block of code) guarantees is true
@@ -203,16 +151,6 @@ layout: Glossary
 
 [**regression**]{#regression}
 :   To re-introduce a bug that was once fixed.
-
-[**return statement**]{#return-statement}
-:   A statement that causes a function to stop executing and return a value
-    to its caller immediately.
-
-[**RGB**]{#RGB}
-:   An [additive model](#additive-color-model)
-    that represents colors as combinations of red, green, and blue.
-    Each color's value is typically in the range 0..255
-    (i.e., a one-byte integer).
 
 [**sequence**]{#sequence}
 :   A collection of information that is presented in a specific order.
@@ -230,12 +168,6 @@ layout: Glossary
 [**slice**]{#slice}
 :   A regular subsequence of a larger sequence,
     such as the first five elements or every second element.
-
-[**stack frame**]{#stack-frame}
-:   A data structure that provides storage for a function's local variables.
-    Each time a function is called, a new stack frame is created
-    and put on the top of the [call stack](#call-stack). When the function returns,
-    the stack frame is discarded.
 
 [**standard input**]{#standard-input}
 :   A process's default input stream.
@@ -265,19 +197,6 @@ layout: Glossary
 :   A feature of command-line interpreters, in which the program automatically fills in partially
     typed commands upon pressing the <kbd>Tab</kbd> key.
 
-[**test oracle**]{#test-oracle}
-:   A program, device, data set, or human being
-    against which the results of a test can be compared.
-
-[**test-driven development**]{#test-driven-development}
-:   The practice of writing unit tests *before* writing the code they test.
-
-[**traceback**]{#traceback}
-:   The sequence of function calls that led to an error.
-
-[**tuple**]{#tuple}
-:   An [immutable](#immutable) [sequence](#sequence) of values.
-
 [**type**]{#type}
 :   The classification of something in a program (for example, the contents of a variable)
     as a kind of number (e.g. [floating-point](#floating-point-number), [integer](#integer)),
@@ -290,7 +209,3 @@ layout: Glossary
 
 [**variable**]{#variable}
 :   A value that has a name associated with it.
-
-[**while loop**]{#while-loop}
-:   A loop that keeps executing as long as some condition is true.
-    See also: [for loop](#for-loop).
