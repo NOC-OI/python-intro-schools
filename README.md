@@ -6,39 +6,28 @@ An introduction to Python for non-programmers using oceanography data.
 
 If you cannot install Anaconda/Python on your computer, then you can launch a Jupyter Lab instance online using MyBinder. Click on the Launch Binder icon below to do this.
 
-[![Run this lesson on MyBinder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NOC-OI/python-novice-esces/binder)
+[![Run this lesson on MyBinder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NOC-OI/python-intro-schools/binder)
 
 ## About the Lesson
 
-This lesson teaches novice programmers to write modular code to perform data analysis
-using Python. The emphasis, however, is on teaching language-agnostic principles of
-programming such as automation with loops and encapsulation with functions,
-see [Best Practices for Scientific Computing][best-practices] and
-[Good enough practices in scientific computing][good-practices] to learn more.
+This lesson teaches novice programmers to perform data analysis using Python. 
 
-The example used in this lesson analyses some model-generated waveheight data. Learners are shown
-how it is better to automate analysis using functions instead of repeating analysis
-steps manually.
+The example used in this lesson analyses some Argo float data. 
 
 The rendered version of the lesson is available at:
-<https://noc-oi.github.io/python-novice-esces/>.
+<https://noc-oi.github.io/python-intro-schools/>.
 
-This lesson is derived from the [Analaysis of Inflammation Data lesson](inflammation_lesson). [Neil Chue Hong](npch), [Chris Wood](chris_wood), [Lucy Bricheno](lucy_b), and [Daniel Barker](daniel_b) were awarded a [NERC Advanced Short Training Course Grant](nerc_grant) to run Software Carpentry Courses specifically for
-NERC domain scientists, to include providing domain-specific examples. The wave-height data was taken from. Bricheno & Wolf (2018) 'Future wave conditions of Europe, in response to high‐end climate change scenarios.' Journal of Geophysical Research: Oceans.
+This lesson is derived from the [Essential Computing Skills for Environmental Scientists course](esces_course) by [Neil Chue Hong](npch), [Chris Wood](chris_wood), [Lucy Bricheno](lucy_b), and [Daniel Barker](daniel_b). That is in turn derived from the Software Carpentry [Analaysis of Inflammation Data lesson](inflammation_lesson). 
 
 
 ## Episodes
 
 | # |  Episode | Time | Question(s) |
 |--:|:---------|:----:|:------------|
-| 1 | [Python Fundamentals][episode01] | 30 | What basic data types can I work with in Python?<br>How can I create a new variable in Python?<br>Can I change the value associated with a variable after I create it? |
-| 2 | [Analyzing Waveheight Data][episode02] | 60 | How can I process tabular data files in Python? |
-| 3 | [Visualizing Tabular Data][episode03] | 50 | How can I visualize tabular data in Python?<br>How can I group several plots together? |
-| 4 | [Storing Multiple Values in Lists][episode04] | 30 | How can I store many values together? |
-| 5 | [Repeating Actions with Loops][episode05] | 30 | How can I do the same operations on many different values? |
-| 6 | [Analyzing Data from Multiple Files][episode06] | 20 | How can I do the same operations on many different files? |
-| 7 | [Making Choices][episode07] | 30 | How can my programs do different things based on data values? |
-| 8 | [Creating Functions][episode08] | 30 | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
+| 1 | [Python Fundamentals][episode01] | 20 | What basic data types can I work with in Python?<br>How can I create a new variable in Python?<br>Can I change the value associated with a variable after I create it? |
+| 2 | [Loading and Analyzing Argo Float Data][episode02] | 30 | How can I load and analyse Argo float data in Python? |
+| 3 | [Visualizing Argo Data][episode03] | 30 | How can I visualize Argo float data in Python? |
+
 
 ## Contributing
 
@@ -50,9 +39,6 @@ We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTR
 and have a look at the [more detailed guidelines][lesson-example] on proper formatting,
 ways to render the lesson locally, and even how to write new episodes!
 
-## Maintainer
-
-The lesson maintainer is [Chris Wood][chris_wood].
 
 ## License
 Instructional material from this lesson is made available under the
@@ -101,11 +87,6 @@ industry and government. More information can be found [here][cp-about].
 [episode01]: https://noc-oi.github.io/python-novice-esces/01-intro/index.html
 [episode02]: https://noc-oi.github.io/python-novice-esces/02-numpy/index.html
 [episode03]: https://noc-oi.github.io/python-novice-esces/03-matplotlib/index.html
-[episode04]: https://noc-oi.github.io/python-novice-esces/04-lists/index.html
-[episode05]: https://noc-oi.github.io/python-novice-esces/05-loop/index.html
-[episode06]: https://noc-oi.github.io/python-novice-esces/06-files/index.html
-[episode07]: https://noc-oi.github.io/python-novice-esces/07-cond/index.html
-[episode08]: https://noc-oi.github.io/python-novice-esces/08-func/index.html
 [community-initiatives]: https://communityin.org
 [cp-about]: https://carpentries.org/about
 [swc-about]: https://software-carpentry.org/about/
@@ -113,3 +94,4 @@ industry and government. More information can be found [here][cp-about].
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
 [inflammation_lesson]: https://github.com/swcarpentry/python-novice-inflammation
+[esces_course]: https://github.com/nerc-esces/python-novice-esces
