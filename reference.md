@@ -1,0 +1,179 @@
+---
+layout: Glossary
+---
+
+## Glossary
+
+
+[**argument**]{#argument}
+:   A value given to a function or program when it runs.
+    The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
+
+[**assign**]{#assign}
+:   To give a value a name by associating a variable with it.
+
+[**body**]{#body}
+:   (of a function): the statements that are executed when a function runs.
+
+
+[**case-insensitive**]{#case-insensitive}
+:   Treating text as if upper and lower case characters of the same letter were the same.
+    See also: [case-sensitive](#case-sensitive).
+
+[**case-sensitive**]{#case-sensitive}
+:   Treating text as if upper and lower case characters of the same letter are different.
+    See also: [case-insensitive](#case-insensitive).
+
+[**comment**]{#comment}
+:   A remark in a program that is intended to help human readers understand what is going on,
+    but is ignored by the computer.
+    Comments in Python, R, and the Unix shell start with a `#` character and
+    run to the end of the line;
+    comments in SQL start with `--`,
+    and other languages have other conventions.
+
+[**compose**]{#compose}
+:   To apply one function to the result of another, such as `f(g(x))`.
+
+[**comma-separated values**]{#comma-separated-values}
+:   (CSV) A common textual representation for tables
+    in which the values in each row are separated by commas.
+
+[**default value**]{#default-value}
+:   A value to use for a [parameter](#parameter) if nothing is specified explicitly.
+
+
+[**delimiter**]{#delimiter}
+:   A character or characters used to separate individual values,
+    such as the commas between columns in a [CSV](#comma-separated-values) file.
+
+
+[**documentation**]{#documentation}
+:   Human-language text written to explain what software does,
+    how it works, or how to use it.
+
+[**dotted notation**]{#dotted-nottation}
+:   A two-part notation used in many programming languages
+    in which `thing.component` refers to the `component` belonging to `thing`.
+
+[**empty string**]{#empty-string}
+:   A character string containing no characters,
+    often thought of as the "zero" of text.
+
+[**encapsulation**]{#encapsulation}
+:   The practice of hiding something's implementation details
+    so that the rest of a program can worry about *what* it does
+    rather than *how* it does it.
+
+[**floating-point number**]{#floating-point-number}
+:   A number containing a fractional part and an exponent.
+    See also: [integer](#integer).
+
+[**function**]{#function}
+:   A named group of instructions that is executed when the function's name is used in
+    the code. Occurrence of a function name in the code is a [function call](#function-call).
+    Functions may process input [arguments](#argument) and return the result back. Functions
+    may also be used for logically grouping together pieces of code. In such cases, they don't
+    need to return any meaningful value and return a special value `None`, which is a way of saying "nothing" in Python.
+
+[**function call**]{#function-call}
+:   A use of a function in another piece of software.
+
+[**global variable**]{#global-variable}
+:   A variable defined outside of a function. It can be used in global statements,
+    and read inside functions.
+
+[**import**]{#import}
+:   To load a [library](#library) into a program.
+
+[**in-place operators**]{#in-place-operators}
+:   An operator such as `+=` that provides a shorthand notation for
+    the common case in which the variable being assigned to
+    is also an operand on the right hand side of the assignment.
+    For example, the statement `x += 3` means the same thing as `x = x + 3`.
+
+[**index**]{#index}
+:   A subscript that specifies the location of a single value in a collection,
+    such as a single pixel in an image.
+
+[**integer**]{#integer}
+:   A whole number, such as -12343. See also: [floating-point number](#floating-point-number).
+
+
+[**library**]{#library}
+:   A family of code units (functions, classes, variables) that implement a set of
+    related tasks.
+
+[**local variable**]{#local-variable}
+:   A variable defined inside of a function, that exists only in the scope of that
+    function, meaning it cannot be accessed by code outside of the function.
+
+[**member**]{#member}
+:   A variable contained within an [object](#object).
+
+[**method**]{#method}
+:   A function which is tied to a particular [object](#object).
+    Each of an object's methods typically implements one of the things it can do,
+    or one of the questions it can answer.
+
+[**notebook**]{#notebook}
+:   Interactive computational environment accessed via your web browser, in which you can write
+    and execute Python code and combine it with explanatory text, mathematics and visualizations.
+    Examples are IPython or Jupyter notebooks.
+
+[**object**]{#object}
+:   A collection of conceptually related variables ([members](#member)) and
+    functions using those variables ([methods](#method)).
+
+[**parameter**]{#parameter}
+:   A variable named in the function's declaration that is used to
+    hold a value passed into the call.
+    The term is often used interchangeably (and inconsistently) with [argument](#argument).
+
+[**regression**]{#regression}
+:   To re-introduce a bug that was once fixed.
+
+[**sequence**]{#sequence}
+:   A collection of information that is presented in a specific order.
+    For example, in Python, a [string](#string) is a sequence of characters,
+    while a list is a sequence of any variable.
+
+[**shape**]{#shape}
+:   An array's dimensions, represented as a vector.
+    For example, a 5×3 array's shape is `(5,3)`.
+
+[**silent failure**]{#silent-failure}
+:   Failing without producing any warning messages.
+    Silent failures are hard to detect and debug.
+
+[**slice**]{#slice}
+:   A regular subsequence of a larger sequence,
+    such as the first five elements or every second element.
+
+[**string**]{#string}
+:   Short for "character string",
+    a [sequence](#sequence) of zero or more characters.
+
+[**syntax**]{#syntax}
+:   The rules that define how code must be written for a computer to understand.
+
+[**syntax error**]{#syntax-error}
+:   A programming error that occurs when statements are in an order or contain characters
+    not expected by the programming language.
+
+[**tab completion**]{#tab-completion}
+:   A feature of command-line interpreters, in which the program automatically fills in partially
+    typed commands upon pressing the <kbd>Tab</kbd> key.
+
+[**type**]{#type}
+:   The classification of something in a program (for example, the contents of a variable)
+    as a kind of number (e.g. [floating-point](#floating-point-number), [integer](#integer)),
+    [string](#string), or something else.
+
+[**type of error**]{#type-of-error}
+:   Indicates the nature of an error in a program. For example, in Python,
+    an `IOError` to problems with file input/output.
+    See also: [syntax error](#syntax-error).
+
+[**variable**]{#variable}
+:   A value that has a name associated with it.
