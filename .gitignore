@@ -2,7 +2,7 @@
 episodes/*html
 site/*
 !site/README.md
-
+docs/
 site/built/*
 site/docs/*
 # History files
