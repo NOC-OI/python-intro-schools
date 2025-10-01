@@ -22,7 +22,13 @@
     <loc>https://noc-oi.github.io/python-novice-esces/additional_material.html</loc>
   </url>
   <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/aio.html</loc>
+  </url>
+  <url>
     <loc>https://noc-oi.github.io/python-novice-esces/extra_exercises.html</loc>
+  </url>
+  <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/images.html</loc>
   </url>
   <url>
     <loc>https://noc-oi.github.io/python-novice-esces/index.html</loc>
@@ -49,16 +55,34 @@
     <loc>https://noc-oi.github.io/python-novice-esces/instructor/additional_material.html</loc>
   </url>
   <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://noc-oi.github.io/python-novice-esces/instructor/extra_exercises.html</loc>
   </url>
   <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://noc-oi.github.io/python-novice-esces/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://noc-oi.github.io/python-novice-esces/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://noc-oi.github.io/python-novice-esces/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://noc-oi.github.io/python-novice-esces/key-points.html</loc>
   </url>
   <url>
     <loc>https://noc-oi.github.io/python-novice-esces/profiles.html</loc>
