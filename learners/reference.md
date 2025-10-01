@@ -74,9 +74,7 @@ layout: Glossary
     the code. Occurrence of a function name in the code is a [function call](#function-call).
     Functions may process input [arguments](#argument) and return the result back. Functions
     may also be used for logically grouping together pieces of code. In such cases, they don't
-    need to return any meaningful value and can be written without the
-    [`return` statement](#return-statement) completely.
-    Such functions return a special value `None`, which is a way of saying "nothing" in Python.
+    need to return any meaningful value and return a special value `None`, which is a way of saying "nothing" in Python.
 
 [**function call**]{#function-call}
 :   A use of a function in another piece of software.
@@ -101,10 +99,6 @@ layout: Glossary
 [**integer**]{#integer}
 :   A whole number, such as -12343. See also: [floating-point number](#floating-point-number).
 
-[**invariant**]{#invariant}
-:   An expression whose value doesn't change during the execution of a program,
-    typically used in an [assertion](#assertion).
-    See also: [precondition](#precondition), [postcondition](#postcondition).
 
 [**library**]{#library}
 :   A family of code units (functions, classes, variables) that implement a set of
@@ -122,10 +116,6 @@ layout: Glossary
     Each of an object's methods typically implements one of the things it can do,
     or one of the questions it can answer.
 
-[**mutable**]{#mutable}
-:   Changeable. The value of mutable data can be altered after it has been
-    created. See [immutable](#immutable)."
-
 [**notebook**]{#notebook}
 :   Interactive computational environment accessed via your web browser, in which you can write
     and execute Python code and combine it with explanatory text, mathematics and visualizations.
@@ -139,15 +129,6 @@ layout: Glossary
 :   A variable named in the function's declaration that is used to
     hold a value passed into the call.
     The term is often used interchangeably (and inconsistently) with [argument](#argument).
-
-[**postcondition**]{#postcondition}
-:   A condition that a function (or other block of code) guarantees is true
-    once it has finished running.
-    Postconditions are often represented using [assertions](#assertion).
-
-[**precondition**]{#precondition}
-:   A condition that must be true in order for a function (or other block of code)
-    to run correctly.
 
 [**regression**]{#regression}
 :   To re-introduce a bug that was once fixed.
@@ -168,19 +149,6 @@ layout: Glossary
 [**slice**]{#slice}
 :   A regular subsequence of a larger sequence,
     such as the first five elements or every second element.
-
-[**standard input**]{#standard-input}
-:   A process's default input stream.
-    In interactive command-line applications,
-    it is typically connected to the keyboard; in a [pipe](#pipe),
-    it receives data from the [standard output](#standard-output) of the preceding process.
-
-[**standard output**]{#standard-output}
-:   A process's default output stream.
-    In interactive command-line applications,
-    data sent to standard output is displayed on the screen;
-    in a [pipe](#pipe),
-    it is passed to the [standard input](#standard-input) of the next process.
 
 [**string**]{#string}
 :   Short for "character string",
