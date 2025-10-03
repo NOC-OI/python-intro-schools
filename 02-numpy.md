@@ -287,7 +287,7 @@ everything:
 ```python
 first_five = data[:5, 1:]
 print('data from first five readings is:')
-print(first_year)
+print(first_five)
 ```
 
 The above example selects rows 0 through 4 and columns 1 through to the end of the array (which gives us the salinity, temperature and depth).

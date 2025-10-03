@@ -139,7 +139,7 @@ formats, including SVG, PDF, and JPEG.
 matplotlib.pyplot.ylabel("Temperature (Degrees C)")
 matplotlib.pyplot.xlabel("Reading Number")
 temperature_plot = matplotlib.pyplot.plot(temperature)
-temperature_plot.savefig("argo6902746-profile12-temperature.png")
+matplotlib.pyplot.savefig("argo6902746-profile12-temperature.png")
 ```
 
 ![](fig/argo6902746-profile12.png){alt="Three line graphs showing the temperature, salinity and presssure."}
