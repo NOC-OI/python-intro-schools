@@ -9,6 +9,7 @@ dependencies:
     - pip
     - python=3.11
     - numpy>2.0
+    - cartopy
     - matplotlib-base
     - matplotlib-inline
     - argopy=1.3.0
