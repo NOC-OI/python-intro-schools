@@ -427,12 +427,12 @@ This should be the same as the 3rd (2nd if you count from zero!) column of our e
 Let's do a basic check of this by comparing the mean values.
 
 ```
-temp_data.mean()
-data[:,2].mean()
+print(temp_data.mean())
+print(data[:,2].mean())
 ```
 
 ```output
-13.05863885747062
+13.058639
 13.058638888888888
 ```
 
