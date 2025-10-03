@@ -187,12 +187,19 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Schedule
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#argo-floats">Argo floats</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -278,14 +285,34 @@
 <p>The best way to learn how to program is to do something useful, so
 this introduction to Python is built around a common scientific task:
 <strong>data analysis</strong>.</p>
-<div class="section level3">
-<h3 id="argo-floats">Argo Floats<a class="anchor" aria-label="anchor" href="#argo-floats"></a></h3>
-<p>In this exercise we will read and manipulate ocean data from an Argo
-float.</p>
+<section><h2 class="section-heading" id="argo-floats">Argo floats<a class="anchor" aria-label="anchor" href="#argo-floats"></a></h2>
+<hr class="half-width"><p>This lesson is intended for people with an interest in oceanography
+and uses some example data from an Argo float. Argo floats are small
+drifting floats that spend most of their time moving up and down between
+the surface and mid level water (usally one or two thousand metres). The
+control their buoyancy by inflating and deflating a small bladder which
+causes them to sink or float. They usually measure the water
+temperature, conductivity (which tells us how salty it is) and pressure
+(which tells us how deep they are). Some of them also measure
+biochemical information such as acidity, the amount of chlorophyll or
+dissolved oxygen. An Argo float usually spends 10 days under the water
+gathering data, it then surfaces and transmits back the information it
+has gathered to a satellite. Once it has transmitted its data it will
+dive again and repeat the process. Each dive generates one “profile” of
+data showing the temperature and salinity of the ocean at each depth
+level.</p>
+<p>Thousands of Argo floats have been deployed since 1999 and they are
+spread all over the oceans. Many countries operate Argo floats but they
+all report their data in a commonly agreed upon format and the data is
+archived at a series of regional Data Assembly Centres or DACS. These
+DACS then pass on the data to two Global Data Assembly Centres (GDACs),
+one in the USA and one in France. Anybody can access data from the GDACs
+and use it in their work. It is quite common for oceanographers to use
+the data from many Argo floats to look at changes in the ocean
+temperature and salinity.</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Argo_float_Aranda.jpg/500px-Argo_float_Aranda.jpg?20220831133506" alt="A photo of an Argo float. From https://commons.wikimedia.org/wiki/File:Argo_float_Aranda.jpg" class="figure mx-auto d-block"><div class="figcaption">A photo of an Argo float. From <a href="https://commons.wikimedia.org/wiki/File:Argo_float_Aranda.jpg" class="external-link uri">https://commons.wikimedia.org/wiki/File:Argo_float_Aranda.jpg</a>
 </div>
-
-
-      <section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
+</figure></section><section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
           </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 00m
 </td>
@@ -328,40 +355,198 @@ Finish
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
       </section><section id="setup"><section><h2 class="section-heading" id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a></h2>
-<hr class="half-width"><p>This lesson is designed to be run on a computer with Python and the
-Matplotlib, Numpy and Argopy libraries installed. We expect most
-learners to use a pre-configured environment for this and not to install
-it themselves.</p>
-<p>A pre-configured MyBinder image is available which will provide all
-the required software. If you have not been provided with any other
-system then use this. Click on the “Run this lesson on MyBinder” icon
-below.</p>
+<hr class="half-width"><p>We expect most learners to use a pre-configured environment for this
+and not to install it themselves. If you are taking this course with the
+National Oceanography Centre please follow the instructions you have
+been given on how to connect to a system with everything you need.</p>
+<p>As an emergency fallback a pre-configured MyBinder image is available
+which will provide all the required software. If you have not been
+provided with any other system then use this. Click on the “Run this
+lesson on MyBinder” icon below. Please note that this system does not
+have many computational resources and will stop your notebook if you
+leave it idle for a few minutes.</p>
 <p><a href="https://mybinder.org/v2/gh/NOC-OI/python-intro-schools/binder" class="external-link"><img src="https://mybinder.org/badge_logo.svg" alt="Run this lesson on MyBinder" class="figure"></a></p>
-</section><section><h2 class="section-heading" id="argo-floats-1">Argo floats<a class="anchor" aria-label="anchor" href="#argo-floats-1"></a></h2>
-<hr class="half-width"><p>This lesson is intended for people with an interest in oceanography
-and uses some example data from an Argo float. Argo floats are small
-drifting floats that spend most of their time moving up and down between
-the surface and mid level water (usally one or two thousand metres). The
-control their buoyancy by inflating and deflating a small bladder which
-causes them to sink or float. They usually measure the water
-temperature, conductivity (which tells us how salty it is) and pressure
-(which tells us how deep they are). Some of them also measure
-biochemical information such as acidity, the amount of chlorophyll or
-dissolved oxygen. An Argo float usually spends 10 days under the water
-gathering data, it then surfaces and transmits back the information it
-has gathered to a satellite. Once it has transmitted its data it will
-dive again and repeat the process. Each dive generates one “profile” of
-data showing the temperature and salinity of the ocean at each depth
-level.</p>
-<p>Thousands of Argo floats have been deployed since 1999 and they are
-spread all over the oceans. Many countries operate Argo floats but they
-all report their data in a commonly agreed upon format and the data is
-archived at a series of regional Data Assembly Centres or DACS. These
-DACS then pass on the data to two Global Data Assembly Centres (GDACs),
-one in the USA and one in France. Anybody can access data from the GDACs
-and use it in their work. It is quite common for oceanographers to use
-the data from many Argo floats to look at changes in the ocean
-temperature and salinity.</p>
+</section><section><h2 class="section-heading" id="if-you-really-wantneed-to-run-this-on-your-own-computer">If you really want/need to run this on your own computer<a class="anchor" aria-label="anchor" href="#if-you-really-wantneed-to-run-this-on-your-own-computer"></a></h2>
+<hr class="half-width"><p>*** Anybody taking this course with the National Oceanography Centre
+should not have to do this! ***</p>
+<p>This lesson is designed to be run on a computer with Python and the
+Matplotlib, Numpy, Argopy and Cartopy libraries installed.</p>
+<div class="section level3">
+<h3 id="install-python">Install Python<a class="anchor" aria-label="anchor" href="#install-python"></a></h3>
+<p>Users of the NOC Data Science Platform or Binder Hub can skip this
+section and move on to the “Obtain lesson materials” section below.</p>
+<div class="section level4">
+<h4 id="install-miniforge">Install Miniforge<a class="anchor" aria-label="anchor" href="#install-miniforge"></a></h4>
+<p>If Conda has not been installed on your machine, then install <a href="https://conda-forge.org/download/" class="external-link">Miniforge</a> for your OS. As
+the name suggests, Miniforge is a “mini” version of the <a href="https://www.anaconda.com/download" class="external-link">Anaconda Python
+distribution</a> that includes only Conda, a Python 3 distribution, and
+any necessary OS-specific dependencies.</p>
+<p>For convenience here are links to the 64-bit Miniconda
+installers.</p>
+<ul><li><a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe" class="external-link">Windows</a></li>
+<li><a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh" class="external-link">Mac
+OSX - Intel CPU</a></li>
+<li><a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh" class="external-link">Mac
+OSX - Apple M1/2/3 CPU</a></li>
+<li><a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh" class="external-link">Linux</a></li>
+</ul><div class="section level5">
+<h5 id="windows-installation">Windows installation<a class="anchor" aria-label="anchor" href="#windows-installation"></a></h5>
+<p>After you downloaded the <a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe" class="external-link">Windows
+installer</a>, double click on it and follow the instructions (accept
+license, etc.). Make sure you tick on <strong>“Add Miniforge3 to my PATH
+environment variable”</strong> option.</p>
+</div>
+<div class="section level5">
+<h5 id="mac-osx-or-linux-installation">Mac OSX or Linux installation<a class="anchor" aria-label="anchor" href="#mac-osx-or-linux-installation"></a></h5>
+<p>First, download the 64-bit Python 3 install script for Miniforge
+either by clicking the link above or using this command in your
+terminal:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">wget</span> <span class="st">"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-</span><span class="va">$(</span><span class="fu">uname</span><span class="va">)</span><span class="st">-</span><span class="va">$(</span><span class="fu">uname</span> <span class="at">-m</span><span class="va">)</span><span class="st">.sh"</span></span></code></pre>
+</div>
+<p>Run the Miniforge install script from your terminal. Follow the
+prompts on the installer screens. If you are unsure about any setting,
+accept the defaults (you can change them later if necessary).</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">bash</span> Miniforge3-<span class="va">$(</span><span class="fu">uname</span><span class="va">)</span>-<span class="va">$(</span><span class="fu">uname</span> <span class="at">-m</span><span class="va">)</span>.sh</span></code></pre>
+</div>
+<p>Once the install script completes, you can remove it.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">rm</span> Miniforge3-<span class="va">$(</span><span class="fu">uname</span><span class="va">)</span>-<span class="va">$(</span><span class="fu">uname</span> <span class="at">-m</span><span class="va">)</span>.sh</span></code></pre>
+</div>
+</div>
+</div>
+<div class="section level4">
+<h4 id="verifying-your-conda-installation">Verifying your Conda installation<a class="anchor" aria-label="anchor" href="#verifying-your-conda-installation"></a></h4>
+<p>In order to verify that you have installed Conda correctly run the
+<code>conda help</code> command. Output of the command should look
+similar to the following.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> conda help</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">usage:</span> conda <span class="pp">[-</span><span class="ss">h</span><span class="pp">]</span> <span class="pp">[-</span><span class="ss">V</span><span class="pp">]</span> command ...</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="ex">conda</span> is a tool for managing and deploying applications, environments and packages.</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="ex">Options:</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="ex">positional</span> arguments:</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  <span class="bu">command</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>    <span class="ex">clean</span>        Remove unused packages and caches.</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>    <span class="ex">config</span>       Modify configuration values in .condarc. This is modeled</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>                 <span class="ex">after</span> the git config command. Writes to the user .condarc</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>                 <span class="fu">file</span> <span class="er">(</span><span class="ex">/Users/drpugh/.condarc</span><span class="kw">)</span> <span class="ex">by</span> default.</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    <span class="ex">create</span>       Create a new conda environment from a list of specified</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>                 <span class="ex">packages.</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>    <span class="bu">help</span>         Displays a list of available conda commands and their help</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>                 <span class="ex">strings.</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>    <span class="ex">info</span>         Display information about current conda install.</span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>    <span class="ex">init</span>         Initialize conda for shell interaction. <span class="pp">[</span><span class="ss">Experimental</span><span class="pp">]</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>    <span class="fu">install</span>      Installs a list of packages into a specified conda</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>                 <span class="ex">environment.</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>    <span class="ex">list</span>         List linked packages in a conda environment.</span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>    <span class="ex">package</span>      Low-level conda package utility. <span class="er">(</span><span class="ex">EXPERIMENTAL</span><span class="kw">)</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a>    <span class="ex">remove</span>       Remove a list of packages from a specified conda environment.</span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>    <span class="ex">uninstall</span>    Alias for conda remove.</span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>    <span class="ex">run</span>          Run an executable in a conda environment. <span class="pp">[</span><span class="ss">Experimental</span><span class="pp">]</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>    <span class="ex">search</span>       Search for packages and display associated information. The</span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>                 <span class="ex">input</span> is a MatchSpec, a query language for conda packages.</span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a>                 <span class="ex">See</span> examples below.</span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a>    <span class="ex">update</span>       Updates conda packages to the latest compatible version.</span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a>    <span class="ex">upgrade</span>      Alias for conda update.</span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="ex">optional</span> arguments:</span>
+<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>  <span class="ex">-h,</span> <span class="at">--help</span>     Show this help message and exit.</span>
+<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>  <span class="ex">-V,</span> <span class="at">--version</span>  Show the conda version number and exit.</span>
+<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a><span class="ex">conda</span> commands available from other packages:</span>
+<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a>  <span class="fu">env</span></span></code></pre>
+</div>
+<p>At the bottom of the help menu you will see a section with some
+optional arguments for the <code>conda</code> command. In particular you
+can pass the <code>--version</code> flag which will return the version
+number. Again output should look similar to the following.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> conda <span class="at">--version</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="ex">conda</span> 4.8.2</span></code></pre>
+</div>
+</div>
+<div class="section level4">
+<h4 id="install-the-required-python-libraries">Install the Required Python Libraries<a class="anchor" aria-label="anchor" href="#install-the-required-python-libraries"></a></h4>
+<p>Run the following command to install the required dependencies.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> conda install jupyterlab pip python=3.11 <span class="st">"numpy&gt;2.0"</span> matplotlib-base matplotlib-inline argopy cartopy</span></code></pre>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="launch-python-interface">Launch Python interface<a class="anchor" aria-label="anchor" href="#launch-python-interface"></a></h3>
+<p>To start working with Python, we need to launch a program that will
+interpret and execute our Python commands. Below we list several
+options. If you don’t have a preference, proceed with the top option in
+the list that is available on your machine. Otherwise, you may use any
+interface you like.</p>
+<p>A Jupyter Notebook provides a browser-based interface for working
+with Python. If you installed Miniforge, you can launch a notebook from
+the terminal:</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Unix shell
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
+<p>If you’re using a Unix shell application, such as Terminal app in
+macOS, Console or Terminal in Linux, or [Git Bash][gitbash] on Windows,
+execute the following command:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Command Prompt (Windows)
+  </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div class="accordion-body">
+<p>On Windows, you can use its native Command Prompt program. The
+easiest way to start it up is pressing <kbd>Windows Logo
+Key</kbd>+<kbd>R</kbd>, entering <code>cmd</code>, and hitting
+<kbd>Return</kbd>. In the Command Prompt, use the following command to
+start Jupyter:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="../instructor/01-intro.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
