@@ -46,12 +46,44 @@ a new piece of equipment adds functionality to a lab space. Just like in the lab
 many libraries can sometimes complicate and slow down your programs - so we only import what we
 need for each program.
 
-Once we've imported the library, we can ask the library to read our data file for us:
+Before we load any data it can be helpful to tell NumPy not to print all the lines in our data
+since some of our data is quite big and we probably don't want to see every line of it. `NumPy` includes
+a function called `set_printoptions` which we can use to tell `NumPy` how many lines of our data
+to show. 
+
+```python
+numpy.set_printoptions(threshold=10)
+```
+
+Once we've imported the `NumpPy` library, we can ask it to read our data file for us:
 
 ```python
 numpy.loadtxt(fname='argo_data.csv', delimiter=',', skiprows=1)
 ```
 
+But this gives us a FileNotFoundError because we don't have a file called `argo_data.csv` yet.
+```output
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+Cell In[3], line 1
+----> 1 numpy.loadtxt(fname='argo_data2.csv', delimiter=',', skiprows=1)
+...
+```
+
+This file is available from https://raw.githubusercontent.com/NOC-OI/python-intro-schools/refs/heads/main/data/argo_data.csv.
+
+We can either download this using the external command `wget`, this is not part of Python and we can tell
+Jupyter to run it by starting the cell with an `!`. 
+
+```python
+!wget https://raw.githubusercontent.com/NOC-OI/python-intro-schools/refs/heads/main/data/argo_data.csv
+```
+
+Or we can change the filename to the full web address and Numpy will get the file from the internet for us.
+
+```python
+numpy.loadtxt(fname='https://raw.githubusercontent.com/NOC-OI/python-intro-schools/refs/heads/main/data/argo_data.csv', delimiter=',', skiprows=1)
+```
 
 ```output
 array([[0.0000000e+00, 3.5025002e+01, 2.8898001e+01, 3.0000000e+00],
