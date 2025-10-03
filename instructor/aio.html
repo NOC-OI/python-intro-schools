@@ -610,7 +610,7 @@ executing the lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -648,7 +648,7 @@ executing the lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1252,15 +1252,9 @@ find out. If you type the name of something followed by a dot, then you
 can use <a href="reference.html#tab-completion">tab completion</a>
 (e.g. type <code>numpy.</code> and then press <kbd>Tab</kbd>) to see a
 list of all functions and attributes that you can use. After selecting
-one, you can also add a question mark
-(e.g. <code>numpy.cumprod?</code>), and IPython will return an
-explanation of the method! This is the same as doing
-<code>help(numpy.cumprod)</code>. Similarly, if you are using the “plain
-vanilla” Python interpreter, you can type <code>numpy.</code> and press
-the <kbd>Tab</kbd> key twice for a listing of what is available. You can
-then use the <code>help()</code> function to see an explanation of the
-function you’re interested in, for example:
-<code>help(numpy.cumprod)</code>.</p>
+one, you can also add a question mark (e.g. <code>numpy.abs?</code>),
+and IPython will return an explanation of the method! This is the same
+as doing <code>help(numpy.abs)</code>.</p>
 </div>
 </div>
 </div>
