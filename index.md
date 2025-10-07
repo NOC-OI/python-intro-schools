@@ -9,8 +9,8 @@ so this introduction to Python is built around a common scientific task:
 ## Argo floats
 
 This lesson is intended for people with an interest in oceanography and uses some example data from an Argo float.
-Argo floats are small drifting floats that spend most of their time moving up and down between the surface and mid level water (usally one or two thousand metres).
-The control their buoyancy by inflating and deflating a small bladder which causes them to sink or float. 
+Argo floats are small drifting floats that spend most of their time moving up and down between the surface and mid level water (usually one or two thousand metres).
+They control their buoyancy by inflating and deflating a small bladder which causes them to float or sink. 
 They usually measure the water temperature, conductivity (which tells us how salty it is) and pressure (which tells us how deep they are). 
 Some of them also measure biochemical information such as acidity, the amount of chlorophyll or dissolved oxygen. An Argo float usually spends 10 days under the 
 water gathering data, it then surfaces and transmits back the information it has gathered to a satellite. Once it has transmitted its data it will dive again
