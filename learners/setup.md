@@ -9,7 +9,7 @@ If you are taking this course with the National Oceanography Centre please follo
 connect to a system with everything you need. 
 
 As an emergency fallback a pre-configured MyBinder image is available which will provide all the required software. If you have not been provided 
-with any other system then use this. Click on the "llaunch binder" icon below. Please note that this system
+with any other system then use this. Click on the "launch binder" icon below. Please note that this system
 does not have many computational resources and will stop your notebook if you leave it idle for a few minutes. 
 
 [![Run this lesson on MyBinder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NOC-OI/python-intro-schools/binder)
