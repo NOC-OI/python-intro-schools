@@ -35,7 +35,7 @@ Python can be used as a calculator:
 This is great but not very interesting.
 To do anything useful with data, we need to assign its value to a _variable_.
 In Python, we can [assign](learners/reference.md#assign) a value to a
-[variable](learners/reference.md#variable), using the equals sign `=`.
+[variable](learners/reference.md#variable) using the equals sign `=`.
 For example, we can track the weight of a patient who weighs 60 kilograms by
 assigning the value `60` to a variable `weight_kg`:
 
@@ -54,6 +54,7 @@ In Python, variable names:
  - are [case sensitive](learners/reference.md#case-sensitive).
 
 This means that, for example:
+
  - `weight0` is a valid variable name, whereas `0weight` is not
  - `weight` and `Weight` are different variables
 
