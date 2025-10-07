@@ -500,9 +500,7 @@ print(numpy.mean(data[:,2]))
 13.058638888888888
 ```
 
-Let's use three other NumPy functions to get some descriptive values about the temperature range.
-We'll also use multiple assignment,
-a convenient Python feature that will enable us to do this all in one line.
+Let's use two other NumPy functions to get some descriptive values about the temperature range.
 
 ```python
 maxval = numpy.max(data[:,2])
