@@ -292,7 +292,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Loading and Analyzing Argo Float Data</h1>
-        <p>Last updated on 2025-10-03 |
+        <p>Last updated on 2025-10-07 |
 
         <a href="https://github.com/noc-oi/python-intro-schools/edit/main/episodes/02-numpy.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -383,9 +383,9 @@ Cell In[3], line 1
 ...</code></pre>
 </div>
 <p>This file is available from <a href="https://raw.githubusercontent.com/NOC-OI/python-intro-schools/refs/heads/main/data/argo_data.csv" class="external-link uri">https://raw.githubusercontent.com/NOC-OI/python-intro-schools/refs/heads/main/data/argo_data.csv</a>.</p>
-<p>We can either download this using the external command
-<code>wget</code>, this is not part of Python and we can tell Jupyter to
-run it by starting the cell with an <code>!</code>.</p>
+<p>We can download this using the external command <code>wget</code>.
+This is not part of Python and we can tell Jupyter to run it by starting
+the cell with an <code>!</code>.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -415,7 +415,7 @@ to run the <a href="reference.html#function">function</a>
 The dot notation in Python is used most of all as an object
 attribute/property specifier or for invoking its method.
 <code>object.property</code> will give you the object.property value,
-<code>object_name.method()</code> will invoke on object_name method.</p>
+<code>object_name.method()</code> will invoke an object_name method.</p>
 <p>As an example, John Smith is the John that belongs to the Smith
 family. We could use the dot notation to write his name
 <code>smith.john</code>, just as <code>loadtxt</code> is a function that
@@ -726,7 +726,7 @@ ever received. To make accessing the data easy from Python a special
 library called <code>argopy</code> has been developed. This can load
 data directly from one of the GDACs and turn it into a Numpy array. This
 saves us having to search through the GDAC, picking the data we want and
-downloading it to file on our computer.</p>
+downloading it to a file on our computer.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -760,17 +760,17 @@ Dataset: phy</code></pre>
 <p>This doesn’t contain much useful data, although it does tell us which
 GDAC supplied the data. To get the actual data we need to call yet
 another function that the <code>datafetcher.erdapp</code> object
-provides called <code>to_xarray</code>. This gets the data for
-processing in another library called Xarray, which works well with Numpy
-data but is very good at working with really big datasets.</p>
+provides called <code>to_xarray</code>. This gets the data ready for
+processing using another library called Xarray, which works well with
+Numpy data but is very good at working with really big datasets.</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a>argopy.DataFetcher().profile(<span class="dv">6902746</span>, <span class="dv">12</span>).to_xarray()</span></code></pre>
 </div>
 <p>Now we get a lot more information including a list of what data
-variables this float has. To get one of those we add it’s name to the
-end of the command, for example to get temperature we add
+variables this float has. To get one of those we add its name to the end
+of the command; for example, to get temperature we add
 <code>.TEMP</code>.</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -780,8 +780,8 @@ end of the command, for example to get temperature we add
 <p>Now we have something which just looks like real data. However one
 last thing, the type of this data is <code>xarray.DataArray</code> not
 <code>numpy.ndarray</code>. To do that final conversion we add
-<code>.values</code> on the end, note that there’s no brackets on this
-as this is a variable name not a function.</p>
+<code>.values</code> on the end (note that there’s no brackets on this
+as this is a variable name not a function).</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1027,7 +1027,7 @@ internet from the GDAC”</li>
   "url": "https://noc-oi.github.io/python-novice-esces/instructor/02-numpy.html",
   "identifier": "https://noc-oi.github.io/python-novice-esces/instructor/02-numpy.html",
   "dateCreated": "2025-10-01",
-  "dateModified": "2025-10-03",
+  "dateModified": "2025-10-07",
   "datePublished": "2025-10-07"
 }
 
