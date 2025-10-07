@@ -72,7 +72,7 @@ Cell In[3], line 1
 
 This file is available from https://raw.githubusercontent.com/NOC-OI/python-intro-schools/refs/heads/main/data/argo_data.csv.
 
-We can either download this using the external command `wget`, this is not part of Python and we can tell
+We can download this using the external command `wget`. This is not part of Python and we can tell
 Jupyter to run it by starting the cell with an `!`. 
 
 ```python
@@ -100,7 +100,7 @@ The expression `numpy.loadtxt(...)` is a
 [function call](learners/reference.md#function-call)
 that asks Python to run the [function](learners/reference.md#function) `loadtxt` which
 belongs to the `numpy` library.
-The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. `object.property` will give you the object.property value, `object_name.method()` will invoke on object_name method.
+The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. `object.property` will give you the object.property value, `object_name.method()` will invoke an object_name method.
 
 As an example, John Smith is the John that belongs to the Smith family.
 We could use the dot notation to write his name `smith.john`,
@@ -394,7 +394,7 @@ Instead of passing around spreadsheets or CSV files of data, all of the data rec
 Data Assembly Centre (DAC). After some checks of the data have been made it is sent to a Global Data Assembly Centre (GDAC).
 There are two of these, one in the USA and one in France, but they both hold a copy of all of the Argo data ever received. 
 To make accessing the data easy from Python a special library called `argopy` has been developed. This can load data directly
-from one of the GDACs and turn it into a Numpy array. This saves us having to search through the GDAC, picking the data we want and downloading it to file on our computer. 
+from one of the GDACs and turn it into a Numpy array. This saves us having to search through the GDAC, picking the data we want and downloading it to a file on our computer. 
 
 ```python
 import argopy
@@ -422,21 +422,21 @@ Dataset: phy
 ```
 
 This doesn't contain much useful data, although it does tell us which GDAC supplied the data. To get the actual data we need to call
-yet another function that the `datafetcher.erdapp` object provides called `to_xarray`. This gets the data for processing in another
+yet another function that the `datafetcher.erdapp` object provides called `to_xarray`. This gets the data ready for processing using another
 library called Xarray, which works well with Numpy data but is very good at working with really big datasets. 
 
 ```python
 argopy.DataFetcher().profile(6902746, 12).to_xarray()
 ```
 
-Now we get a lot more information including a list of what data variables this float has. To get one of those we add it's name to the 
-end of the command, for example to get temperature we add `.TEMP`.
+Now we get a lot more information including a list of what data variables this float has. To get one of those we add its name to the 
+end of the command; for example, to get temperature we add `.TEMP`.
 
 ```python
 argopy.DataFetcher().profile(6902746, 12).to_xarray().TEMP
 ```
 Now we have something which just looks like real data. However one last thing, the type of this data is `xarray.DataArray` not `numpy.ndarray`.
-To do that final conversion we add `.values` on the end, note that there's no brackets on this as this is a variable name not a function.
+To do that final conversion we add `.values` on the end (note that there's no brackets on this as this is a variable name not a function).
 
 ```python
 argopy.DataFetcher().profile(6902746, 12).to_xarray().TEMP.values
