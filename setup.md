@@ -9,7 +9,7 @@ If you are taking this course with the National Oceanography Centre please follo
 connect to a system with everything you need. 
 
 As an emergency fallback a pre-configured MyBinder image is available which will provide all the required software. If you have not been provided 
-with any other system then use this. Click on the "Run this lesson on MyBinder" icon below. Please note that this system
+with any other system then use this. Click on the "llaunch binder" icon below. Please note that this system
 does not have many computational resources and will stop your notebook if you leave it idle for a few minutes. 
 
 [![Run this lesson on MyBinder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NOC-OI/python-intro-schools/binder)
@@ -17,7 +17,7 @@ does not have many computational resources and will stop your notebook if you le
 
 ## If you really want/need to run this on your own computer
 
-*** Anybody taking this course with the National Oceanography Centre should not have to do this! ***
+** Anybody taking this course with the National Oceanography Centre should not have to do this! **
 
 This lesson is designed to be run on a computer with Python and the Matplotlib, Numpy, Argopy and Cartopy libraries installed.
 
@@ -147,7 +147,7 @@ If you installed Miniforge, you can launch a notebook from the terminal:
 ### Unix shell
 
 If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
-in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
+in Linux, or [Git Bash](https://gitforwindows.org/) on Windows, execute the following command:
 
 ```bash
 jupyter lab
