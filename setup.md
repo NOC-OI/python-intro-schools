@@ -17,7 +17,7 @@ does not have many computational resources and will stop your notebook if you le
 
 ## If you really want/need to run this on your own computer
 
-** Anybody taking this course with the National Oceanography Centre should not have to do this! **
+**Anybody taking this course with the National Oceanography Centre should not have to do this!**
 
 This lesson is designed to be run on a computer with Python and the Matplotlib, Numpy, Argopy and Cartopy libraries installed.
 
