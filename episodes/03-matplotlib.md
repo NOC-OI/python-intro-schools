@@ -131,7 +131,7 @@ pres_plot = plt.plot(pressure)
 We can call the `savefig` function to store the plot as a graphics file. This can be
 a convenient way to store your plots for use in other documents, web
 pages etc. The graphics format is automatically determined by
-Matplotlib from the file name ending we specify; here PNG from
+Matplotlib from the file name ending we specify; here the format is PNG from
 'argo6902746-profile12-temperature.png'. Matplotlib supports many different graphics
 formats, including SVG, PDF, and JPEG.
 
@@ -169,9 +169,9 @@ and there are a few more after that being shown on the fleetmonitoring website.
 ### Plotting Temperature Across Multiple Profiles
 
 Another useful feature of the Argopy library is that it can plot data from multiple Argo profiles (dives). 
-This can be done by supplying a whole Xarray dataset for all our profiles, we can extract this from
-the `float_dat` object we got earlier by calling the `to_xarray()` function on it. This can be passed
-to the `scatter_plot` function in Argopy, we also have to give it the variable name which is "TEMP" (or PSAL for salinity).
+This can be done by supplying a whole Xarray dataset for all our profiles; we can extract this from
+the `float_data` object we got earlier by calling the `to_xarray()` function on it. This can be passed
+to the `scatter_plot` function in Argopy. We also have to give it the variable name which is "TEMP" (or "PSAL" for salinity).
 This plot uses colour to show the temperature and puts depth/pressure on the y axis and date on the x axis. 
 
 ```python
@@ -190,7 +190,7 @@ https://fleetmonitoring.euro-argo.eu/dashboard?Status=Active&Year%20of%20deploym
 Float numbers 7902230, 1902114, 1902725, 1902724, 1902109, 1902111, 1902110, 1902112, 4903834, 4903656, 6990513 or 2903943 could all be good contenders.
 Some floats will not work because they are missing data and you will ValueError, if this happens try a different float. 
 
-Create a new notebook with the following graphs for you float:
+Create a new notebook with the following graphs for your float:
 
 * A map showing where it has been
 * A scatter plot of temperature against depth over time
